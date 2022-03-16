@@ -18,8 +18,8 @@ Nakon vaše prijave bit će vam dodijeljen mentor s kojim ćete tijekom semestra
 Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
 ------------  | ------------------- | ----- | ---------------------
 Antonio Mohorić | amohoric@foi.hr | 0016142069 | mohoricantonio
-Marko Mušica | mmusica@foi.hr | ... | ...
-Fran Rubinić | frubinic@foi.hr | ... | ...
+Marko Mušica | mmusica@foi.hr | 0016142667 | mmusica
+Fran Rubinić | frubinic@foi.hr | 0246091478 | frubinic
 
 ## Opis domene
 Umjesto ovih uputa opišite domenu ili problem koji pokrivate vašim  projektom. Domena može biti proizvoljna, ali obratite pozornost da sukladno ishodima učenja, domena omogući primjenu zahtijevanih koncepata kako je to navedeno u sljedećem poglavlju. Priložite odgovarajuće skice gdje je to prikladno.
