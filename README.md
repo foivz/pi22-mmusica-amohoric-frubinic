@@ -11,7 +11,7 @@ Sav programski kod potrebno je verzionirati u glavnoj **master** grani i **obvez
 
 Nakon vaše prijave bit će vam dodijeljen mentor s kojim ćete tijekom semestra raditi na ovom projektu. A sada, vrijeme je da prijavite vaš projekt. Za prijavu vašeg projektnog prijedloga molimo vas koristite **predložak** koji je naveden u nastavku, a započnite tako da kliknete na *olovku* u desnom gornjem kutu ovoga dokumenta :) 
 
-# Prijem pacijenta u bolnicu
+# PC for you
 
 ## Projektni tim
 
@@ -22,15 +22,21 @@ Marko Mušica | mmusica@foi.hr | 0016142667 | mmusica
 Fran Rubinić | frubinic@foi.hr | 0246091478 | frubinic
 
 ## Opis domene
-Umjesto ovih uputa opišite domenu ili problem koji pokrivate vašim  projektom. Domena može biti proizvoljna, ali obratite pozornost da sukladno ishodima učenja, domena omogući primjenu zahtijevanih koncepata kako je to navedeno u sljedećem poglavlju. Priložite odgovarajuće skice gdje je to prikladno.
+Naša aplikacija će podržavati rad trgovine "PC for you" koja se bavi prodajom komponenata za računala, a nudi i uslugu slaganja računala po zahtjevu korisnika. Aplikacija će sadržavati specifikacije komponenata i provjeru kompatibilnosti istih. Nakon uspješnog slaganja računala korisniku bi se ispisala ukupna cijena, cijena po komponentama i cijena slaganja računala, a nakon toga korisnik može naručiti komponente ili računalo.
 
 ## Specifikacija projekta
-Umjesto ovih uputa opišite zahtjeve za funkcionalnošću programskog proizvoda. Pobrojite osnovne funkcionalnosti i za svaku naznačite ime odgovornog člana tima. Opišite buduću arhitekturu programskog proizvoda. Obratite pozornost da bi arhitektura trebala biti višeslojna s odvojenom (dislociranom) bazom podatka. Također uzmite u obzir da bi svaki član tima treba biti odgovorana za otprilike 3 funkcionalnosti, te da bi opterećenje članova tima trebalo biti ujednačeno. Priložite odgovarajuće dijagrame i skice gdje je to prikladno. Funkcionalnosti sustava bobrojite u tablici ispod koristeći predložak koji slijedi:
 
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Login | Za pristup dnevniku potrebnba je autentikacija korisnika pomoću login funkcionalnosti. Korisnik se logira s podacima koji su mu dodijeljeni prilikom ... | Zlatko Stapić
-F02 | Pregled dnevnika | .... | ...
+F01 | Registracija | Korisnik se može registrirati i spremiti osobne podatke za narudžbu | 
+F02 | Prijava | Osoba se može prijaviti kao admin ili korisnik | 
+F03 | Upravljanje komponentama | Admin ima mogućnost dodavanja, brisanja i uređivanja komponenata | 
+F04 | Kreiranje narudžbe | Korisnik odabire komponente koje želi u svojem novom računalu |
+F05 | Provjera kompatibilnosti | Aplikacija javlja korisniku jesu li komponente međusobno kompatibilne|
+F06 | Pregled narudžbi | Korisnik ima mogućnost pregleda izvršenih narudžbi |
+F07 | Izračun cijene i kreiranje računa | Aplikacija računa ukupnu cijenu i kreira račun za narudžbu |
+F08 | Otkazivanje narudžbe | Korisnik može otkazati narudžbu ukoliko narudžba još nije poslana |
+F09 | Statistika prodanih komponenti | Admin može vidjeti statistiku koja prikazuje prodaju komponenti i pregled komponenti koje se često prodaju zajedno|
 
 ## Tehnologije i oprema
 .NET (Visual Studio), MySQL Workbench, Draw.io, MS Word, MS Excel, Visual Paradigm, GitHub
