@@ -18,12 +18,12 @@ Oznaka | Naziv | Kratki opis | Odgovorni član tima
 F01 | Registracija | Korisnik se može registrirati i spremiti osobne podatke za narudžbu | Fran Rubinić
 F02 | Prijava | Osoba se može prijaviti kao admin ili korisnik | Fran Rubinić
 F03 | Upravljanje komponentama | Admin ima mogućnost dodavanja, brisanja i uređivanja komponenata | Antonio Mohorić
-F04 | Kreiranje narudžbe | Korisnik odabire komponente koje želi u svojem novom računalu | Marko Mušica
+F04 | Kreiranje narudžbe | Korisnik odabire komponente koje želi u svojem novom računalu. Komponente će se preko posebne aplikacije moći drag&dropat na kostur računala. | Marko Mušica
 F05 | Provjera kompatibilnosti | Aplikacija javlja korisniku jesu li komponente međusobno kompatibilne | Antonio Mohorić
-F06 | Pregled narudžbi | Korisnik ima mogućnost pregleda izvršenih narudžbi | Antonio Mohorić
+F06 | Pregled narudžbi | Prodavatelju i naručitelju za svaku uspješno izvršenu narudžbu dolazi automatski generiran e-mail u pdf formatu | Antonio Mohorić
 F07 | Izračun cijene i kreiranje računa | Aplikacija računa ukupnu cijenu i kreira račun za narudžbu | Marko Mušica
 F08 | Otkazivanje narudžbe | Korisnik može otkazati narudžbu ukoliko narudžba još nije poslana | Marko Mušica
-F09 | Statistika prodanih komponenti | Admin može vidjeti statistiku koja prikazuje prodaju komponenti i pregled komponenti koje se često prodaju zajedno | Fran Rubinić
+F09 | Statistika prodanih komponenti | Admin može vidjeti statistiku koja prikazuje prodaju komponenti i pregled komponenti koje se često prodaju zajedno. Ova statistika bit će prikazana u formi tjednog emaila koji će automatski biti generiran u pdf obliku od strane windows servisa koji se pozadinski izvršavaju. | Fran Rubinić
 
 ## Tehnologije i oprema
 .NET (Visual Studio), MySQL Workbench, Draw.io, MS Word, MS Excel, Visual Paradigm, GitHub
