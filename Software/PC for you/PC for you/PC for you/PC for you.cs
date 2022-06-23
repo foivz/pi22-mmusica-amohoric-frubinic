@@ -16,5 +16,10 @@ namespace PC_for_you
         {
             InitializeComponent();
         }
+
+        private void PCForYouForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
