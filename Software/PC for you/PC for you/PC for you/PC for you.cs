@@ -21,5 +21,10 @@ namespace PC_for_you
         {
 
         }
+
+        private void btnRegistracija_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
