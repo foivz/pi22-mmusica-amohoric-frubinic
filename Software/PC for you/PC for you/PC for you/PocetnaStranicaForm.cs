@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PC_for_you.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,12 +24,14 @@ namespace PC_for_you
 
         private void PocetnaStranicaForm_Load(object sender, EventArgs e)
         {
+            UCKomponente ucKomponente = new UCKomponente();
+            AddUserControl(ucKomponente);
             PrikaziSakrijNavigaciju();
         }
 
         private void PrikaziSakrijNavigaciju()
         {
-            if(uloga == 1)
+            if (uloga == 1)
             {
                 btnSveNarudzbe.Visible = true;
                 btnUredivanjeKomponenata.Visible = true;
@@ -38,12 +41,25 @@ namespace PC_for_you
                 btnSveNarudzbe.Visible = false;
                 btnUredivanjeKomponenata.Visible = false;
             }
-            
+
         }
 
         private void btnOdjava_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnKomponente_Click(object sender, EventArgs e)
+        {
+            UCKomponente ucKomponente = new UCKomponente();
+            AddUserControl(ucKomponente);
+        }
+        private void AddUserControl(UserControl userControl) 
+        {
+            userControl.Dock = DockStyle.Fill;
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(userControl);
+            userControl.BringToFront();
         }
     }
 }
