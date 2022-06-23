@@ -72,8 +72,10 @@ namespace PC_for_you
             MessageBox.Show("Prijavljeni korisnik: " + KorimePrijavljenog + " - " + UlogaPrijavljenog);
             if(UlogaPrijavljenog != 0)
             {
-                PocetnaStranicaForm form = new PocetnaStranicaForm();
+                PocetnaStranicaForm form = new PocetnaStranicaForm(UlogaPrijavljenog, KorimePrijavljenog);
                 form.ShowDialog();
+                UlogaPrijavljenog = 0;
+                KorimePrijavljenog = "";
             }
         }
         

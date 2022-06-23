@@ -12,9 +12,38 @@ namespace PC_for_you
 {
     public partial class PocetnaStranicaForm : Form
     {
-        public PocetnaStranicaForm()
+        private int uloga;
+        private string korime;
+        public PocetnaStranicaForm(int uloga, string korime)
         {
             InitializeComponent();
+            this.uloga = uloga;
+            this.korime = korime;
+        }
+
+        private void PocetnaStranicaForm_Load(object sender, EventArgs e)
+        {
+            PrikaziSakrijNavigaciju();
+        }
+
+        private void PrikaziSakrijNavigaciju()
+        {
+            if(uloga == 1)
+            {
+                btnSveNarudzbe.Visible = true;
+                btnUredivanjeKomponenata.Visible = true;
+            }
+            else
+            {
+                btnSveNarudzbe.Visible = false;
+                btnUredivanjeKomponenata.Visible = false;
+            }
+            
+        }
+
+        private void btnOdjava_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
