@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxKorime = new System.Windows.Forms.TextBox();
-            this.textBoxLozinka = new System.Windows.Forms.TextBox();
+            this.txtKorime = new System.Windows.Forms.TextBox();
+            this.txtLozinka = new System.Windows.Forms.TextBox();
             this.btnPrijavi = new System.Windows.Forms.Button();
             this.btnRegistracija = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -38,19 +38,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBoxKorime
+            // txtKorime
             // 
-            this.textBoxKorime.Location = new System.Drawing.Point(199, 258);
-            this.textBoxKorime.Name = "textBoxKorime";
-            this.textBoxKorime.Size = new System.Drawing.Size(285, 20);
-            this.textBoxKorime.TabIndex = 0;
+            this.txtKorime.Location = new System.Drawing.Point(199, 258);
+            this.txtKorime.Name = "txtKorime";
+            this.txtKorime.Size = new System.Drawing.Size(285, 20);
+            this.txtKorime.TabIndex = 0;
             // 
-            // textBoxLozinka
+            // txtLozinka
             // 
-            this.textBoxLozinka.Location = new System.Drawing.Point(199, 302);
-            this.textBoxLozinka.Name = "textBoxLozinka";
-            this.textBoxLozinka.Size = new System.Drawing.Size(285, 20);
-            this.textBoxLozinka.TabIndex = 1;
+            this.txtLozinka.Location = new System.Drawing.Point(199, 302);
+            this.txtLozinka.Name = "txtLozinka";
+            this.txtLozinka.Size = new System.Drawing.Size(285, 20);
+            this.txtLozinka.TabIndex = 1;
+            this.txtLozinka.UseSystemPasswordChar = true;
             // 
             // btnPrijavi
             // 
@@ -60,6 +61,7 @@
             this.btnPrijavi.TabIndex = 2;
             this.btnPrijavi.Text = "Prijavi se";
             this.btnPrijavi.UseVisualStyleBackColor = true;
+            this.btnPrijavi.Click += new System.EventHandler(this.btnPrijavi_Click);
             // 
             // btnRegistracija
             // 
@@ -109,8 +111,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRegistracija);
             this.Controls.Add(this.btnPrijavi);
-            this.Controls.Add(this.textBoxLozinka);
-            this.Controls.Add(this.textBoxKorime);
+            this.Controls.Add(this.txtLozinka);
+            this.Controls.Add(this.txtKorime);
             this.Name = "PCForYouForm";
             this.Text = "PC for you";
             this.Load += new System.EventHandler(this.PCForYouForm_Load);
@@ -122,8 +124,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBoxKorime;
-        private System.Windows.Forms.TextBox textBoxLozinka;
+        private System.Windows.Forms.TextBox txtKorime;
+        private System.Windows.Forms.TextBox txtLozinka;
         private System.Windows.Forms.Button btnPrijavi;
         private System.Windows.Forms.Button btnRegistracija;
         private System.Windows.Forms.PictureBox pictureBox1;
