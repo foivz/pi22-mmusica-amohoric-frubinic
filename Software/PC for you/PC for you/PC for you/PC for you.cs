@@ -26,5 +26,11 @@ namespace PC_for_you
         {
 
         }
+
+        private void btnPrijavi_Click(object sender, EventArgs e)
+        {
+            PrijavaForm form = new PrijavaForm();
+            form.ShowDialog();
+        }
     }
 }

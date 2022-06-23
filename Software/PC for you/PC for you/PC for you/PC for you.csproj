@@ -71,6 +71,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PI2233_DB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PrijavaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrijavaForm.Designer.cs">
+      <DependentUpon>PrijavaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistracijaForm.cs">
@@ -81,6 +87,9 @@
     </Compile>
     <EmbeddedResource Include="PC for you.resx">
       <DependentUpon>PC for you.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrijavaForm.resx">
+      <DependentUpon>PrijavaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
