@@ -16,5 +16,10 @@ namespace PC_for_you.UserControls
         {
             InitializeComponent();
         }
+
+        private void UCKomponente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
