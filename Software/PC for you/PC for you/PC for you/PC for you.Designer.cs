@@ -69,6 +69,7 @@
             this.btnRegistracija.TabIndex = 3;
             this.btnRegistracija.Text = "Registriraj se";
             this.btnRegistracija.UseVisualStyleBackColor = true;
+            this.btnRegistracija.Click += new System.EventHandler(this.btnRegistracija_Click);
             // 
             // pictureBox1
             // 
