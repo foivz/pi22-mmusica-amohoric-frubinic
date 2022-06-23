@@ -69,6 +69,12 @@ namespace PC_for_you
                 MessageBox.Show(greska);
             }
             MessageBox.Show("Prijavljeni korisnik: " + KorimePrijavljenog + " - " + UlogaPrijavljenog);
+            if(UlogaPrijavljenog != 0)
+            {
+                PocetnaStranicaForm form = new PocetnaStranicaForm();
+                form.ShowDialog();
+            }
         }
+        
     }
 }
