@@ -91,6 +91,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PI2233_DB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PocetnaStranicaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PocetnaStranicaForm.Designer.cs">
+      <DependentUpon>PocetnaStranicaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistracijaForm.cs">
