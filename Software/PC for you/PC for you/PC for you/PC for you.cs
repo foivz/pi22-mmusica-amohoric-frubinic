@@ -29,8 +29,17 @@ namespace PC_for_you
 
         private void btnPrijavi_Click(object sender, EventArgs e)
         {
-            PrijavaForm form = new PrijavaForm();
-            form.ShowDialog();
+            string greska = "";
+            if (txtKorime.Text.Equals("")) greska += "Korisničko ime nije uneseno!";
+            if (txtLozinka.Text.Equals("")) greska += "Lozinka nije unesena!";
+            if (greska.Equals(""))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show(greska);
+            }
         }
     }
 }
