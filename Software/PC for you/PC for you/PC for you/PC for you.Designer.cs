@@ -51,6 +51,7 @@
             this.txtLozinka.Name = "txtLozinka";
             this.txtLozinka.Size = new System.Drawing.Size(285, 20);
             this.txtLozinka.TabIndex = 1;
+            this.txtLozinka.UseSystemPasswordChar = true;
             // 
             // btnPrijavi
             // 
