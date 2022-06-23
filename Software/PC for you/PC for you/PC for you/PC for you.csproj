@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DohvatiKomponente.cs" />
     <Compile Include="komponenta.cs">
       <DependentUpon>PI2233_DB.tt</DependentUpon>
     </Compile>
