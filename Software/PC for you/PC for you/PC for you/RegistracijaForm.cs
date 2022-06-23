@@ -52,7 +52,7 @@ namespace PC_for_you
                             E_mail = email,
                             Ime_prezime = imePrezime,
                             Password = lozinka,
-                            UserName = imePrezime,
+                            UserName = korime,
                             Uloga = uloga
                         };
                         context.korisnik.Add(korisnik);
