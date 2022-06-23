@@ -31,6 +31,8 @@
             this.cboxKomponente = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvKomponente = new System.Windows.Forms.DataGridView();
+            this.btnNaruci = new System.Windows.Forms.Button();
+            this.btnSloziRacunalo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKomponente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,10 +62,31 @@
             this.dgvKomponente.Size = new System.Drawing.Size(746, 304);
             this.dgvKomponente.TabIndex = 2;
             // 
+            // btnNaruci
+            // 
+            this.btnNaruci.Location = new System.Drawing.Point(378, 32);
+            this.btnNaruci.Name = "btnNaruci";
+            this.btnNaruci.Size = new System.Drawing.Size(196, 23);
+            this.btnNaruci.TabIndex = 3;
+            this.btnNaruci.Text = "Naruči odabranu komponentu";
+            this.btnNaruci.UseVisualStyleBackColor = true;
+            this.btnNaruci.Click += new System.EventHandler(this.btnNaruci_Click);
+            // 
+            // btnSloziRacunalo
+            // 
+            this.btnSloziRacunalo.Location = new System.Drawing.Point(580, 32);
+            this.btnSloziRacunalo.Name = "btnSloziRacunalo";
+            this.btnSloziRacunalo.Size = new System.Drawing.Size(196, 23);
+            this.btnSloziRacunalo.TabIndex = 4;
+            this.btnSloziRacunalo.Text = "Složi svoje računalo";
+            this.btnSloziRacunalo.UseVisualStyleBackColor = true;
+            // 
             // UCKomponente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnSloziRacunalo);
+            this.Controls.Add(this.btnNaruci);
             this.Controls.Add(this.dgvKomponente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboxKomponente);
@@ -81,5 +104,7 @@
         private System.Windows.Forms.ComboBox cboxKomponente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvKomponente;
+        private System.Windows.Forms.Button btnNaruci;
+        private System.Windows.Forms.Button btnSloziRacunalo;
     }
 }

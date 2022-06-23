@@ -13,6 +13,9 @@ namespace PC_for_you
 {
     public partial class PocetnaStranicaForm : Form
     {
+        
+        private static List<komponenta> listaKomponenata = new List<komponenta>();
+        private static List<maticna> listaMaticna = new List<maticna>();
         private int uloga;
         private string korime;
         public PocetnaStranicaForm(int uloga, string korime)
@@ -24,8 +27,7 @@ namespace PC_for_you
 
         private void PocetnaStranicaForm_Load(object sender, EventArgs e)
         {
-            UCKomponente ucKomponente = new UCKomponente();
-            AddUserControl(ucKomponente);
+            PostaviKomponente();
             PrikaziSakrijNavigaciju();
         }
 
@@ -49,10 +51,14 @@ namespace PC_for_you
             this.Close();
         }
 
+        public void PostaviKomponente() 
+        {
+            UCKomponente ucKomponente = new UCKomponente(listaKomponenata, listaMaticna);
+            AddUserControl(ucKomponente);
+        }
         private void btnKomponente_Click(object sender, EventArgs e)
         {
-            UCKomponente ucKomponente = new UCKomponente();
-            AddUserControl(ucKomponente);
+            PostaviKomponente();
         }
         private void AddUserControl(UserControl userControl) 
         {
