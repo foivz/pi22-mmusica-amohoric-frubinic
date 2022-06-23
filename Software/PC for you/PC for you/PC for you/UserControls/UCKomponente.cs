@@ -19,12 +19,12 @@ namespace PC_for_you.UserControls
 
         private void UCKomponente_Load(object sender, EventArgs e)
         {
-            RefreshCBox();
+            
         }
 
         private void RefreshCBox()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

@@ -117,6 +117,12 @@
     <Compile Include="UserControls\UCKomponente.Designer.cs">
       <DependentUpon>UCKomponente.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCUredivanjeKomponenata.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCUredivanjeKomponenata.Designer.cs">
+      <DependentUpon>UCUredivanjeKomponenata.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="PC for you.resx">
       <DependentUpon>PC for you.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCKomponente.resx">
       <DependentUpon>UCKomponente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCUredivanjeKomponenata.resx">
+      <DependentUpon>UCUredivanjeKomponenata.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="PI2233_DB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
