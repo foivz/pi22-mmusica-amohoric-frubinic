@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxImePrezime = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxAdresa = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label2
@@ -67,6 +67,7 @@
             this.btnRegistrirajSe.TabIndex = 9;
             this.btnRegistrirajSe.Text = "Registriraj se";
             this.btnRegistrirajSe.UseVisualStyleBackColor = true;
+            this.btnRegistrirajSe.Click += new System.EventHandler(this.btnRegistrirajSe_Click);
             // 
             // textBoxLozinka
             // 
@@ -123,12 +124,12 @@
             this.label5.TabIndex = 17;
             this.label5.Text = "Adresa:";
             // 
-            // textBox1
+            // textBoxAdresa
             // 
-            this.textBox1.Location = new System.Drawing.Point(118, 103);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(282, 20);
-            this.textBox1.TabIndex = 16;
+            this.textBoxAdresa.Location = new System.Drawing.Point(118, 103);
+            this.textBoxAdresa.Name = "textBoxAdresa";
+            this.textBoxAdresa.Size = new System.Drawing.Size(282, 20);
+            this.textBoxAdresa.TabIndex = 16;
             // 
             // RegistracijaForm
             // 
@@ -136,7 +137,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 380);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxAdresa);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBoxImePrezime);
             this.Controls.Add(this.label3);
@@ -148,6 +149,7 @@
             this.Controls.Add(this.textBoxKorime);
             this.Name = "RegistracijaForm";
             this.Text = "Registracija";
+            this.Load += new System.EventHandler(this.RegistracijaForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,6 +167,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxImePrezime;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxAdresa;
     }
 }

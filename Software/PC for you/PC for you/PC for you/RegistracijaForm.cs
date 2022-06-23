@@ -16,5 +16,26 @@ namespace PC_for_you
         {
             InitializeComponent();
         }
+
+        private void RegistracijaForm_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnRegistrirajSe_Click(object sender, EventArgs e)
+        {
+            if (textBoxPonovljenaLozinka.Text == textBoxLozinka.Text) 
+            {
+                using (var context = new PI2233_DBEntities())
+                {
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lozinke vam nisu iste! Molimo Vas da unesete opet");
+            }
+            
+        }
     }
 }
