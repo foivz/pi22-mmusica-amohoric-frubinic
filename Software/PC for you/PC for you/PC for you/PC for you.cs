@@ -24,7 +24,8 @@ namespace PC_for_you
 
         private void btnRegistracija_Click(object sender, EventArgs e)
         {
-
+            RegistracijaForm registracijaForm = new RegistracijaForm();
+            registracijaForm.ShowDialog();
         }
     }
 }

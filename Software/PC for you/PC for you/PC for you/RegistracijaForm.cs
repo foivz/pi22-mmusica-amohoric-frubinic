@@ -26,9 +26,44 @@ namespace PC_for_you
         {
             if (textBoxPonovljenaLozinka.Text == textBoxLozinka.Text) 
             {
+                bool korimePostoji;
+                string korime = textBoxKorime.Text;
+
                 using (var context = new PI2233_DBEntities())
                 {
+                    var found = (from k in context.korisnik
+                                where k.UserName == korime
+                                select k).ToList();
+                    korimePostoji = found.Any();           
+                }
+                if (!korimePostoji) 
+                {
+                    using (var context = new PI2233_DBEntities())
+                    {
+                        string lozinka = textBoxLozinka.Text;
+                        string adresa = textBoxAdresa.Text;
+                        string email = textBoxEmail.Text;
+                        string imePrezime = textBoxImePrezime.Text;
+                        int uloga = 2; //Default registracije nam postavlja ulogu na korisnika
 
+                        korisnik korisnik = new korisnik
+                        {
+                            Adresa = adresa,
+                            E_mail = email,
+                            Ime_prezime = imePrezime,
+                            Password = lozinka,
+                            UserName = imePrezime,
+                            Uloga = uloga
+                        };
+                        context.korisnik.Add(korisnik);
+                        context.SaveChanges();
+                        MessageBox.Show("Uspješno ste se registrirali!");
+                        Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ovakvo korisničko ime već postoji! Molimo Vas da ponovno unesete podatke");
                 }
             }
             else
