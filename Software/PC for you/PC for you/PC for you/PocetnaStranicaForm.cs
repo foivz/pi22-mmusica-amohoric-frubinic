@@ -45,5 +45,10 @@ namespace PC_for_you
         {
             this.Close();
         }
+
+        private void btnKomponente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
