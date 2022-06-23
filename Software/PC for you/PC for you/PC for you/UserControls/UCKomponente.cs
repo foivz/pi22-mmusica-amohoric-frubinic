@@ -61,14 +61,32 @@ namespace PC_for_you.UserControls
         {
             var id = dgvKomponente.CurrentRow.Cells[0].Value;
             int komId = int.Parse(id.ToString());
-            using (var context = new PI2233_DBEntities())
-            {
-                var komp = from k in context.komponenta
-                           where k.IdKomponenta == komId
-                           select k;
-                listaKomponenata.Add(komp as komponenta);
 
+            if (cboxKomponente.SelectedItem.ToString() == "Maticna")
+            {
+                using (var context = new PI2233_DBEntities())
+                {
+                    var mat = from m in context.maticna
+                               where m.IdMaticne == komId
+                               select m;
+
+                    listaMaticna.Add(mat as maticna);
+
+                }
             }
+            else 
+            {
+                using (var context = new PI2233_DBEntities())
+                {
+                    var komp = from k in context.komponenta
+                               where k.IdKomponenta == komId
+                               select k;
+
+                    listaKomponenata.Add(komp as komponenta);
+
+                }
+            }
+            
         }
     }
 }
