@@ -51,9 +51,6 @@ namespace PC_for_you
 
         private void btnKomponente_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-
-=======
             UCKomponente ucKomponente = new UCKomponente();
             AddUserControl(ucKomponente);
         }
@@ -63,7 +60,6 @@ namespace PC_for_you
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(userControl);
             userControl.BringToFront();
->>>>>>> 93d8550d04f8d3a8fec8cdb34d24eaa54f181503
         }
     }
 }
