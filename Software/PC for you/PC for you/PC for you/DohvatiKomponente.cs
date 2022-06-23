@@ -30,6 +30,7 @@ namespace PC_for_you
                                                       where procesor.Tip == Tip
                                                       select new
                                                       {
+                                                          ID = procesor.IdKomponenta,
                                                           Naziv = procesor.Naziv,
                                                           Proizvodac = procesor.Proizvodac,
                                                           Potrosnja = procesor.Potrosnja,
@@ -48,6 +49,7 @@ namespace PC_for_you
                                                       where graficka.Tip == Tip
                                                       select new
                                                       {
+                                                          ID = graficka.IdKomponenta,
                                                           Naziv = graficka.Naziv,
                                                           Proizvodac = graficka.Proizvodac,
                                                           Potrosnja = graficka.Potrosnja,
@@ -66,6 +68,7 @@ namespace PC_for_you
                                                       where napajanje.Tip == Tip
                                                       select new
                                                       {
+                                                          ID = napajanje.IdKomponenta,
                                                           Naziv = napajanje.Naziv,
                                                           Proizvodac = napajanje.Proizvodac,
                                                           Kapacitet = napajanje.Kapacitet_napajanja,
@@ -89,6 +92,7 @@ namespace PC_for_you
                                         where r.Tip == Tip
                                         select new
                                         {
+                                            ID = r.IdKomponenta,
                                             Naziv = r.Naziv,
                                             Proizvodac = r.Proizvodac,
                                             Potrosnja = r.Potrosnja,
@@ -106,6 +110,7 @@ namespace PC_for_you
                                         where p.Tip == Tip
                                         select new
                                         {
+                                            ID = p.IdKomponenta,
                                             Naziv = p.Naziv,
                                             Proizvodac = p.Proizvodac,
                                             Potrosnja = p.Potrosnja,
@@ -122,6 +127,7 @@ namespace PC_for_you
                                         where k.Tip == Tip
                                         select new
                                         {
+                                            ID = k.IdKomponenta,
                                             Naziv = k.Naziv,
                                             Proizvodac = k.Proizvodac,
                                             Potrosnja = k.Potrosnja,
