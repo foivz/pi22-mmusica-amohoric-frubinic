@@ -45,20 +45,27 @@ namespace PC_for_you
                         string email = textBoxEmail.Text;
                         string imePrezime = textBoxImePrezime.Text;
                         int uloga = 2; //Default registracije nam postavlja ulogu na korisnika
-
-                        korisnik korisnik = new korisnik
+                        if (lozinka == "" || adresa == "" || email =="" || imePrezime==""|| korime=="")
                         {
-                            Adresa = adresa,
-                            E_mail = email,
-                            Ime_prezime = imePrezime,
-                            Password = lozinka,
-                            UserName = korime,
-                            Uloga = uloga
-                        };
-                        context.korisnik.Add(korisnik);
-                        context.SaveChanges();
-                        MessageBox.Show("Uspješno ste se registrirali!");
-                        Close();
+                            MessageBox.Show("Molimo Vas da popunite sva polja!");
+                        }
+                        else 
+                        {
+                            korisnik korisnik = new korisnik
+                            {
+                                Adresa = adresa,
+                                E_mail = email,
+                                Ime_prezime = imePrezime,
+                                Password = lozinka,
+                                UserName = korime,
+                                Uloga = uloga
+                            };
+                            context.korisnik.Add(korisnik);
+                            context.SaveChanges();
+                            MessageBox.Show("Uspješno ste se registrirali!");
+                            Close();
+                        }
+                       
                     }
                 }
                 else
