@@ -72,9 +72,10 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(199, 68);
+            this.pictureBox1.Image = global::PC_for_you.Properties.Resources.Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(272, 87);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(285, 144);
+            this.pictureBox1.Size = new System.Drawing.Size(140, 135);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -100,6 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(702, 470);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
