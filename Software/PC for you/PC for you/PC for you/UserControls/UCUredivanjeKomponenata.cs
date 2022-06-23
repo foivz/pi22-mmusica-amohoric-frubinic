@@ -43,13 +43,9 @@ namespace PC_for_you.UserControls
         }
         private void DohvatiPodatke()
         {
-            using (var context = new PI2233_DBEntities())
-            {
-                var query = from k in context.komponenta
-                            where k.Tip == cmbVrsteKomponenata.SelectedItem.ToString()
-                            select k;
-                dgvUredivanjeKomponenata.DataSource = query.ToList();
-            }
+            string tip = cmbVrsteKomponenata.SelectedItem.ToString();
+            DohvatiKomponente dohvatiKomponente = new DohvatiKomponente(tip, dgvUredivanjeKomponenata);
+            dohvatiKomponente.DohvatiZeljenuKomponentu();
         }
     }
 }
