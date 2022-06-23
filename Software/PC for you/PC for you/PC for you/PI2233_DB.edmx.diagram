@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9fc97a48478547e58e391794531ce6eb" Name="Diagram1">
+        <EntityTypeShape EntityType="PI2233_DBModel.komponenta" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2233_DBModel.korisnik" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2233_DBModel.maticna" Width="1.5" PointX="5.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2233_DBModel.narucuje" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2233_DBModel.narudzba" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2233_DBModel.uloga" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="PI2233_DBModel.narucuje_Narucuje_Komponenta_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2233_DBModel.korisnik_Korisnik_Uloga_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2233_DBModel.narudzba_Narudzba_Korisnik_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2233_DBModel.narucuje_Narucuje_Maticna_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2233_DBModel.narucuje_Narucuje_Narudzba_FK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

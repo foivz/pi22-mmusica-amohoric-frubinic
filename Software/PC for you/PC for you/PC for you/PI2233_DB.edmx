@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PI2233_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="komponenta">
+          <Key>
+            <PropertyRef Name="IdKomponenta" />
+          </Key>
+          <Property Name="IdKomponenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Proizvodac" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Tip" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Potrosnja" Type="int" Nullable="false" />
+          <Property Name="Cijena" Type="float" Nullable="false" />
+          <Property Name="Socket" Type="nvarchar" MaxLength="15" />
+          <Property Name="Tip_memorije" Type="nvarchar" MaxLength="15" />
+          <Property Name="Brzina" Type="nvarchar" MaxLength="15" />
+          <Property Name="Velicina_memorije" Type="nvarchar" MaxLength="15" />
+          <Property Name="Interface" Type="nvarchar" MaxLength="15" />
+          <Property Name="Duzina_graficke" Type="float" />
+          <Property Name="Vram" Type="nvarchar" MaxLength="15" />
+          <Property Name="Kapacitet_napajanja" Type="int" />
+          <Property Name="Maksimalna_duzina_graficke" Type="float" />
+          <Property Name="Podrzavana_maticna" Type="nvarchar" MaxLength="15" />
+          <Property Name="KapacitetPohrane" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="korisnik">
+          <Key>
+            <PropertyRef Name="IdKorisnik" />
+          </Key>
+          <Property Name="IdKorisnik" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Ime_prezime" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="E-mail" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="Uloga" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="maticna">
+          <Key>
+            <PropertyRef Name="IdMaticne" />
+          </Key>
+          <Property Name="IdMaticne" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Proizvodac" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Potrosnja" Type="int" Nullable="false" />
+          <Property Name="Cijena" Type="float" Nullable="false" />
+          <Property Name="Socket" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Velicina" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Tip_memorije" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Broj_modula_za_memoriju" Type="int" Nullable="false" />
+          <Property Name="InterfacePCIe8" Type="smallint" Nullable="false" />
+          <Property Name="InterfacePCIe16" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="narucuje">
+          <Key>
+            <PropertyRef Name="IdNarucuje" />
+          </Key>
+          <Property Name="IdNarucuje" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdNarudzbe" Type="int" Nullable="false" />
+          <Property Name="IdKomponente" Type="int" />
+          <Property Name="IdMaticne" Type="int" />
+          <Property Name="Kolicina" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="narudzba">
+          <Key>
+            <PropertyRef Name="IdNarudzba" />
+          </Key>
+          <Property Name="IdNarudzba" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdKorisnika" Type="int" Nullable="false" />
+          <Property Name="Datum" Type="datetime2" Precision="0" Nullable="false" />
+          <Property Name="Ukupna_cijena" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="uloga">
+          <Key>
+            <PropertyRef Name="IdUloga" />
+          </Key>
+          <Property Name="IdUloga" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv_uloge" Type="nvarchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <Association Name="korisnik$Korisnik_Uloga_FK">
+          <End Role="uloga" Type="Self.uloga" Multiplicity="1" />
+          <End Role="korisnik" Type="Self.korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uloga">
+              <PropertyRef Name="IdUloga" />
+            </Principal>
+            <Dependent Role="korisnik">
+              <PropertyRef Name="Uloga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="narucuje$Narucuje_Komponenta_FK">
+          <End Role="komponenta" Type="Self.komponenta" Multiplicity="0..1" />
+          <End Role="narucuje" Type="Self.narucuje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="komponenta">
+              <PropertyRef Name="IdKomponenta" />
+            </Principal>
+            <Dependent Role="narucuje">
+              <PropertyRef Name="IdKomponente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="narucuje$Narucuje_Maticna_FK">
+          <End Role="maticna" Type="Self.maticna" Multiplicity="0..1" />
+          <End Role="narucuje" Type="Self.narucuje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maticna">
+              <PropertyRef Name="IdMaticne" />
+            </Principal>
+            <Dependent Role="narucuje">
+              <PropertyRef Name="IdMaticne" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="narucuje$Narucuje_Narudzba_FK">
+          <End Role="narudzba" Type="Self.narudzba" Multiplicity="1" />
+          <End Role="narucuje" Type="Self.narucuje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="narudzba">
+              <PropertyRef Name="IdNarudzba" />
+            </Principal>
+            <Dependent Role="narucuje">
+              <PropertyRef Name="IdNarudzbe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="narudzba$Narudzba_Korisnik_FK">
+          <End Role="korisnik" Type="Self.korisnik" Multiplicity="1" />
+          <End Role="narudzba" Type="Self.narudzba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="korisnik">
+              <PropertyRef Name="IdKorisnik" />
+            </Principal>
+            <Dependent Role="narudzba">
+              <PropertyRef Name="IdKorisnika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PI2233_DBModelStoreContainer">
+          <EntitySet Name="komponenta" EntityType="Self.komponenta" Schema="mydb" store:Type="Tables" />
+          <EntitySet Name="korisnik" EntityType="Self.korisnik" Schema="mydb" store:Type="Tables" />
+          <EntitySet Name="maticna" EntityType="Self.maticna" Schema="mydb" store:Type="Tables" />
+          <EntitySet Name="narucuje" EntityType="Self.narucuje" Schema="mydb" store:Type="Tables" />
+          <EntitySet Name="narudzba" EntityType="Self.narudzba" Schema="mydb" store:Type="Tables" />
+          <EntitySet Name="uloga" EntityType="Self.uloga" Schema="mydb" store:Type="Tables" />
+          <AssociationSet Name="korisnik$Korisnik_Uloga_FK" Association="Self.korisnik$Korisnik_Uloga_FK">
+            <End Role="uloga" EntitySet="uloga" />
+            <End Role="korisnik" EntitySet="korisnik" />
+          </AssociationSet>
+          <AssociationSet Name="narucuje$Narucuje_Komponenta_FK" Association="Self.narucuje$Narucuje_Komponenta_FK">
+            <End Role="komponenta" EntitySet="komponenta" />
+            <End Role="narucuje" EntitySet="narucuje" />
+          </AssociationSet>
+          <AssociationSet Name="narucuje$Narucuje_Maticna_FK" Association="Self.narucuje$Narucuje_Maticna_FK">
+            <End Role="maticna" EntitySet="maticna" />
+            <End Role="narucuje" EntitySet="narucuje" />
+          </AssociationSet>
+          <AssociationSet Name="narucuje$Narucuje_Narudzba_FK" Association="Self.narucuje$Narucuje_Narudzba_FK">
+            <End Role="narudzba" EntitySet="narudzba" />
+            <End Role="narucuje" EntitySet="narucuje" />
+          </AssociationSet>
+          <AssociationSet Name="narudzba$Narudzba_Korisnik_FK" Association="Self.narudzba$Narudzba_Korisnik_FK">
+            <End Role="korisnik" EntitySet="korisnik" />
+            <End Role="narudzba" EntitySet="narudzba" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PI2233_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="komponenta">
+          <Key>
+            <PropertyRef Name="IdKomponenta" />
+          </Key>
+          <Property Name="IdKomponenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Proizvodac" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tip" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Potrosnja" Type="Int32" Nullable="false" />
+          <Property Name="Cijena" Type="Double" Nullable="false" />
+          <Property Name="Socket" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Tip_memorije" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Brzina" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Velicina_memorije" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Interface" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Duzina_graficke" Type="Double" />
+          <Property Name="Vram" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Kapacitet_napajanja" Type="Int32" />
+          <Property Name="Maksimalna_duzina_graficke" Type="Double" />
+          <Property Name="Podrzavana_maticna" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="KapacitetPohrane" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="narucuje" Relationship="Self.narucuje_Narucuje_Komponenta_FK" FromRole="komponenta" ToRole="narucuje" />
+        </EntityType>
+        <EntityType Name="korisnik">
+          <Key>
+            <PropertyRef Name="IdKorisnik" />
+          </Key>
+          <Property Name="IdKorisnik" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ime_prezime" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adresa" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="E_mail" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Uloga" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="uloga1" Relationship="Self.korisnik_Korisnik_Uloga_FK" FromRole="korisnik" ToRole="uloga" />
+          <NavigationProperty Name="narudzba" Relationship="Self.narudzba_Narudzba_Korisnik_FK" FromRole="korisnik" ToRole="narudzba" />
+        </EntityType>
+        <EntityType Name="maticna">
+          <Key>
+            <PropertyRef Name="IdMaticne" />
+          </Key>
+          <Property Name="IdMaticne" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Proizvodac" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Potrosnja" Type="Int32" Nullable="false" />
+          <Property Name="Cijena" Type="Double" Nullable="false" />
+          <Property Name="Socket" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Velicina" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tip_memorije" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Broj_modula_za_memoriju" Type="Int32" Nullable="false" />
+          <Property Name="InterfacePCIe8" Type="Int16" Nullable="false" />
+          <Property Name="InterfacePCIe16" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="narucuje" Relationship="Self.narucuje_Narucuje_Maticna_FK" FromRole="maticna" ToRole="narucuje" />
+        </EntityType>
+        <EntityType Name="narucuje">
+          <Key>
+            <PropertyRef Name="IdNarucuje" />
+          </Key>
+          <Property Name="IdNarucuje" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdNarudzbe" Type="Int32" Nullable="false" />
+          <Property Name="IdKomponente" Type="Int32" />
+          <Property Name="IdMaticne" Type="Int32" />
+          <Property Name="Kolicina" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="komponenta" Relationship="Self.narucuje_Narucuje_Komponenta_FK" FromRole="narucuje" ToRole="komponenta" />
+          <NavigationProperty Name="maticna" Relationship="Self.narucuje_Narucuje_Maticna_FK" FromRole="narucuje" ToRole="maticna" />
+          <NavigationProperty Name="narudzba" Relationship="Self.narucuje_Narucuje_Narudzba_FK" FromRole="narucuje" ToRole="narudzba" />
+        </EntityType>
+        <EntityType Name="narudzba">
+          <Key>
+            <PropertyRef Name="IdNarudzba" />
+          </Key>
+          <Property Name="IdNarudzba" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdKorisnika" Type="Int32" Nullable="false" />
+          <Property Name="Datum" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Ukupna_cijena" Type="Double" Nullable="false" />
+          <NavigationProperty Name="korisnik" Relationship="Self.narudzba_Narudzba_Korisnik_FK" FromRole="narudzba" ToRole="korisnik" />
+          <NavigationProperty Name="narucuje" Relationship="Self.narucuje_Narucuje_Narudzba_FK" FromRole="narudzba" ToRole="narucuje" />
+        </EntityType>
+        <EntityType Name="uloga">
+          <Key>
+            <PropertyRef Name="IdUloga" />
+          </Key>
+          <Property Name="IdUloga" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv_uloge" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="korisnik" Relationship="Self.korisnik_Korisnik_Uloga_FK" FromRole="uloga" ToRole="korisnik" />
+        </EntityType>
+        <Association Name="narucuje_Narucuje_Komponenta_FK">
+          <End Role="komponenta" Type="Self.komponenta" Multiplicity="0..1" />
+          <End Role="narucuje" Type="Self.narucuje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="komponenta">
+              <PropertyRef Name="IdKomponenta" />
+            </Principal>
+            <Dependent Role="narucuje">
+              <PropertyRef Name="IdKomponente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="korisnik_Korisnik_Uloga_FK">
+          <End Role="uloga" Type="Self.uloga" Multiplicity="1" />
+          <End Role="korisnik" Type="Self.korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="uloga">
+              <PropertyRef Name="IdUloga" />
+            </Principal>
+            <Dependent Role="korisnik">
+              <PropertyRef Name="Uloga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="narudzba_Narudzba_Korisnik_FK">
+          <End Role="korisnik" Type="Self.korisnik" Multiplicity="1" />
+          <End Role="narudzba" Type="Self.narudzba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="korisnik">
+              <PropertyRef Name="IdKorisnik" />
+            </Principal>
+            <Dependent Role="narudzba">
+              <PropertyRef Name="IdKorisnika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="narucuje_Narucuje_Maticna_FK">
+          <End Role="maticna" Type="Self.maticna" Multiplicity="0..1" />
+          <End Role="narucuje" Type="Self.narucuje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="maticna">
+              <PropertyRef Name="IdMaticne" />
+            </Principal>
+            <Dependent Role="narucuje">
+              <PropertyRef Name="IdMaticne" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="narucuje_Narucuje_Narudzba_FK">
+          <End Role="narudzba" Type="Self.narudzba" Multiplicity="1" />
+          <End Role="narucuje" Type="Self.narucuje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="narudzba">
+              <PropertyRef Name="IdNarudzba" />
+            </Principal>
+            <Dependent Role="narucuje">
+              <PropertyRef Name="IdNarudzbe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PI2233_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="komponenta" EntityType="Self.komponenta" />
+          <EntitySet Name="korisnik" EntityType="Self.korisnik" />
+          <EntitySet Name="maticna" EntityType="Self.maticna" />
+          <EntitySet Name="narucuje" EntityType="Self.narucuje" />
+          <EntitySet Name="narudzba" EntityType="Self.narudzba" />
+          <EntitySet Name="uloga" EntityType="Self.uloga" />
+          <AssociationSet Name="narucuje_Narucuje_Komponenta_FK" Association="Self.narucuje_Narucuje_Komponenta_FK">
+            <End Role="komponenta" EntitySet="komponenta" />
+            <End Role="narucuje" EntitySet="narucuje" />
+          </AssociationSet>
+          <AssociationSet Name="korisnik_Korisnik_Uloga_FK" Association="Self.korisnik_Korisnik_Uloga_FK">
+            <End Role="uloga" EntitySet="uloga" />
+            <End Role="korisnik" EntitySet="korisnik" />
+          </AssociationSet>
+          <AssociationSet Name="narudzba_Narudzba_Korisnik_FK" Association="Self.narudzba_Narudzba_Korisnik_FK">
+            <End Role="korisnik" EntitySet="korisnik" />
+            <End Role="narudzba" EntitySet="narudzba" />
+          </AssociationSet>
+          <AssociationSet Name="narucuje_Narucuje_Maticna_FK" Association="Self.narucuje_Narucuje_Maticna_FK">
+            <End Role="maticna" EntitySet="maticna" />
+            <End Role="narucuje" EntitySet="narucuje" />
+          </AssociationSet>
+          <AssociationSet Name="narucuje_Narucuje_Narudzba_FK" Association="Self.narucuje_Narucuje_Narudzba_FK">
+            <End Role="narudzba" EntitySet="narudzba" />
+            <End Role="narucuje" EntitySet="narucuje" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PI2233_DBModelStoreContainer" CdmEntityContainer="PI2233_DBEntities">
+          <EntitySetMapping Name="komponenta">
+            <EntityTypeMapping TypeName="PI2233_DBModel.komponenta">
+              <MappingFragment StoreEntitySet="komponenta">
+                <ScalarProperty Name="IdKomponenta" ColumnName="IdKomponenta" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Proizvodac" ColumnName="Proizvodac" />
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
+                <ScalarProperty Name="Potrosnja" ColumnName="Potrosnja" />
+                <ScalarProperty Name="Cijena" ColumnName="Cijena" />
+                <ScalarProperty Name="Socket" ColumnName="Socket" />
+                <ScalarProperty Name="Tip_memorije" ColumnName="Tip_memorije" />
+                <ScalarProperty Name="Brzina" ColumnName="Brzina" />
+                <ScalarProperty Name="Velicina_memorije" ColumnName="Velicina_memorije" />
+                <ScalarProperty Name="Interface" ColumnName="Interface" />
+                <ScalarProperty Name="Duzina_graficke" ColumnName="Duzina_graficke" />
+                <ScalarProperty Name="Vram" ColumnName="Vram" />
+                <ScalarProperty Name="Kapacitet_napajanja" ColumnName="Kapacitet_napajanja" />
+                <ScalarProperty Name="Maksimalna_duzina_graficke" ColumnName="Maksimalna_duzina_graficke" />
+                <ScalarProperty Name="Podrzavana_maticna" ColumnName="Podrzavana_maticna" />
+                <ScalarProperty Name="KapacitetPohrane" ColumnName="KapacitetPohrane" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="korisnik">
+            <EntityTypeMapping TypeName="PI2233_DBModel.korisnik">
+              <MappingFragment StoreEntitySet="korisnik">
+                <ScalarProperty Name="IdKorisnik" ColumnName="IdKorisnik" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Ime_prezime" ColumnName="Ime_prezime" />
+                <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+                <ScalarProperty Name="E_mail" ColumnName="E-mail" />
+                <ScalarProperty Name="Uloga" ColumnName="Uloga" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="maticna">
+            <EntityTypeMapping TypeName="PI2233_DBModel.maticna">
+              <MappingFragment StoreEntitySet="maticna">
+                <ScalarProperty Name="IdMaticne" ColumnName="IdMaticne" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Proizvodac" ColumnName="Proizvodac" />
+                <ScalarProperty Name="Potrosnja" ColumnName="Potrosnja" />
+                <ScalarProperty Name="Cijena" ColumnName="Cijena" />
+                <ScalarProperty Name="Socket" ColumnName="Socket" />
+                <ScalarProperty Name="Velicina" ColumnName="Velicina" />
+                <ScalarProperty Name="Tip_memorije" ColumnName="Tip_memorije" />
+                <ScalarProperty Name="Broj_modula_za_memoriju" ColumnName="Broj_modula_za_memoriju" />
+                <ScalarProperty Name="InterfacePCIe8" ColumnName="InterfacePCIe8" />
+                <ScalarProperty Name="InterfacePCIe16" ColumnName="InterfacePCIe16" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="narucuje">
+            <EntityTypeMapping TypeName="PI2233_DBModel.narucuje">
+              <MappingFragment StoreEntitySet="narucuje">
+                <ScalarProperty Name="IdNarucuje" ColumnName="IdNarucuje" />
+                <ScalarProperty Name="IdNarudzbe" ColumnName="IdNarudzbe" />
+                <ScalarProperty Name="IdKomponente" ColumnName="IdKomponente" />
+                <ScalarProperty Name="IdMaticne" ColumnName="IdMaticne" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="narudzba">
+            <EntityTypeMapping TypeName="PI2233_DBModel.narudzba">
+              <MappingFragment StoreEntitySet="narudzba">
+                <ScalarProperty Name="IdNarudzba" ColumnName="IdNarudzba" />
+                <ScalarProperty Name="IdKorisnika" ColumnName="IdKorisnika" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Ukupna_cijena" ColumnName="Ukupna_cijena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="uloga">
+            <EntityTypeMapping TypeName="PI2233_DBModel.uloga">
+              <MappingFragment StoreEntitySet="uloga">
+                <ScalarProperty Name="IdUloga" ColumnName="IdUloga" />
+                <ScalarProperty Name="Naziv_uloge" ColumnName="Naziv_uloge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
