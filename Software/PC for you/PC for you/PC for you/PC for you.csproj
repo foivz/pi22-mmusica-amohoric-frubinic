@@ -62,6 +62,7 @@
     <Compile Include="komponenta.cs">
       <DependentUpon>PI2233_DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="KomponentaZaKosaricu.cs" />
     <Compile Include="korisnik.cs">
       <DependentUpon>PI2233_DB.tt</DependentUpon>
     </Compile>
