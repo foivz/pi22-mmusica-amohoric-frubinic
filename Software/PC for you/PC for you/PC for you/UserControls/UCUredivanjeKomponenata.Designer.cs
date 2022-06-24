@@ -71,6 +71,7 @@
             this.btnDodajKomponentu.TabIndex = 4;
             this.btnDodajKomponentu.Text = "Dodaj novu komponentu";
             this.btnDodajKomponentu.UseVisualStyleBackColor = true;
+            this.btnDodajKomponentu.Click += new System.EventHandler(this.btnDodajKomponentu_Click);
             // 
             // btnAzurirajOdabranu
             // 

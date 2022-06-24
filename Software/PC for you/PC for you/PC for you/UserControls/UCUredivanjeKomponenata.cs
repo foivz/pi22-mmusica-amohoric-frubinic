@@ -47,5 +47,12 @@ namespace PC_for_you.UserControls
             DohvatiKomponente dohvatiKomponente = new DohvatiKomponente(tip, dgvUredivanjeKomponenata);
             dohvatiKomponente.DohvatiZeljenuKomponentu();
         }
+
+        private void btnDodajKomponentu_Click(object sender, EventArgs e)
+        {
+            DodajAzurirajKomponentu form = new DodajAzurirajKomponentu(cmbVrsteKomponenata.SelectedItem.ToString());
+            form.ShowDialog();
+            DohvatiPodatke();
+        }
     }
 }
