@@ -88,6 +88,52 @@ namespace PC_for_you
                 narudzbaContext.narudzba.Add(novaNarudzba);
                 narudzbaContext.SaveChanges();
             }
+            var listaMaticnaBezDuplikata = ListaNarucenaMaticna.GroupBy(x => x.IdMaticne).Select(x => x.First()).ToList();
+            var listaKomponenataBezDuplikata = listaNarucenaKomponenta.GroupBy(x => x.IdKomponenta).Select(x => x.First()).ToList();
+
+            foreach (maticna narucenaMaticna in listaMaticnaBezDuplikata)
+            {
+                using (var narucujuContext = new PI2233_DBEntities())
+                {
+                    narucujuContext.narudzba.Attach(novaNarudzba);
+                    narucujuContext.maticna.Attach(narucenaMaticna);
+                    int kolicina = ListaNarucenaMaticna.FindAll(x=>x.IdMaticne ==narucenaMaticna.IdMaticne).Count();
+                    
+                    narucuje noviNarucuje = new narucuje
+                    {
+                        IdMaticne=narucenaMaticna.IdMaticne,
+                        IdNarudzbe=novaNarudzba.IdNarudzba,
+                        maticna=narucenaMaticna,
+                        Kolicina = kolicina,
+                        narudzba=novaNarudzba
+
+                    };
+                    narucujuContext.narucuje.Add(noviNarucuje);
+                    narucujuContext.SaveChanges();
+                    
+                }
+            }
+            foreach (komponenta narucenaKomponenta in listaKomponenataBezDuplikata)
+            {
+                using (var komponentaContext = new PI2233_DBEntities())
+                {
+                    komponentaContext.narudzba.Attach(novaNarudzba);
+                    komponentaContext.komponenta.Attach(narucenaKomponenta);
+                    int kolicina = listaNarucenaKomponenta.FindAll(x=> x.IdKomponenta == narucenaKomponenta.IdKomponenta).Count();
+                    
+                    narucuje noviNarucuje = new narucuje
+                    {
+                        IdKomponente = narucenaKomponenta.IdKomponenta,
+                        IdNarudzbe = novaNarudzba.IdNarudzba,
+                        Kolicina = kolicina,
+                        komponenta = narucenaKomponenta,
+                        narudzba = novaNarudzba
+                    };
+                    komponentaContext.narucuje.Add(noviNarucuje);
+                    komponentaContext.SaveChanges();
+                }
+            }
+            
         }
 
     }

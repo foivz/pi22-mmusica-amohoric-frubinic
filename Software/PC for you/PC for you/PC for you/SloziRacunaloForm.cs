@@ -264,6 +264,8 @@ namespace PC_for_you
             komponentaZaKosaricu.DodajKomponentuZaNarudzbu(new KreacijaNarudzbe(IdGraficka, "Graficka"));
             komponentaZaKosaricu.DodajKomponentuZaNarudzbu(new KreacijaNarudzbe(IdMemorija, "RAM"));
             komponentaZaKosaricu.NaruciKomponente();
+            MessageBox.Show("Uspješno ste naručili računalo!");
+            Close();
         }
     }
 }
