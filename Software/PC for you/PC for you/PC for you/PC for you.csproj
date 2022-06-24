@@ -117,6 +117,7 @@
     <Compile Include="RegistracijaForm.Designer.cs">
       <DependentUpon>RegistracijaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sesija.cs" />
     <Compile Include="SloziRacunaloForm.cs">
       <SubType>Form</SubType>
     </Compile>

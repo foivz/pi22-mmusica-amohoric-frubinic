@@ -79,7 +79,7 @@ namespace PC_for_you
                 narudzbaContext.korisnik.Attach(korisnikNarucitelj);
                 novaNarudzba = new narudzba
                 {
-                    Datum = DateTime.Today,
+                    Datum = DateTime.Now,
                     IdKorisnika = korisnikNarucitelj.IdKorisnik,
                     korisnik = korisnikNarucitelj,
                     Ukupna_cijena = ukupnaCijena,
