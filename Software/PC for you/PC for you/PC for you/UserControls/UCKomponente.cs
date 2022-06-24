@@ -117,14 +117,15 @@ namespace PC_for_you.UserControls
 
         private void btnOdaberiKomponentu_Click(object sender, EventArgs e)
         {
-            
-            
+            listBoxKomponenta.Items.Clear();
+            string prenesenaKomponenta = dgvKomponente.CurrentRow.Cells[0].Value.ToString() + "-" + dgvKomponente.CurrentRow.Cells[1].Value.ToString() + ":" +  cboxKomponente.SelectedItem.ToString();
+            listBoxKomponenta.Items.Add(prenesenaKomponenta);
             MessageBox.Show("Komponentu u kućici iznad možete sada drag and droppat na kostur računala!");
         }
 
         private void listBoxKomponenta_MouseDown(object sender, MouseEventArgs e)
         {
-            
+            listBoxKomponenta.DoDragDrop(this.listBoxKomponenta.SelectedItem.ToString(), DragDropEffects.Copy);
 
         }
     }
