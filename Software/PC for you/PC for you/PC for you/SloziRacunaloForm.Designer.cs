@@ -50,6 +50,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnNaruci = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -331,11 +332,28 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "Napajanje:";
             // 
+            // btnNaruci
+            // 
+            this.btnNaruci.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNaruci.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNaruci.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNaruci.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNaruci.Enabled = false;
+            this.btnNaruci.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnNaruci.ForeColor = System.Drawing.Color.White;
+            this.btnNaruci.Location = new System.Drawing.Point(550, 459);
+            this.btnNaruci.Name = "btnNaruci";
+            this.btnNaruci.Size = new System.Drawing.Size(189, 60);
+            this.btnNaruci.TabIndex = 22;
+            this.btnNaruci.Text = "Naruči računalo";
+            this.btnNaruci.Click += new System.EventHandler(this.btnNaruci_Click);
+            // 
             // SloziRacunaloForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(741, 544);
+            this.Controls.Add(this.btnNaruci);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -392,5 +410,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2Button btnNaruci;
     }
 }

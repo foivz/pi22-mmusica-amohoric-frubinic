@@ -53,7 +53,8 @@ namespace PC_for_you
                 listBoxProcesor.Items.Add(droppedItem);
                 checkBoxProcesor.Checked = true;
             }
-            
+            OmoguciGumbNaruci();
+
         }
 
         private void listBoxRAM_DragDrop(object sender, DragEventArgs e)
@@ -72,6 +73,7 @@ namespace PC_for_you
                 listBoxRAM.Items.Add(droppedItem);
                 checkBoxRAM.Checked = true;
             }
+            OmoguciGumbNaruci();
         }
 
         private void listBoxRAM_DragEnter(object sender, DragEventArgs e)
@@ -106,6 +108,7 @@ namespace PC_for_you
                 listBoxGraficka.Items.Add(droppedItem);
                 checkBoxGraficka.Checked = true;
             }
+            OmoguciGumbNaruci();
         }
 
         private void listBoxPohrana_DragEnter(object sender, DragEventArgs e)
@@ -132,6 +135,7 @@ namespace PC_for_you
                 listBoxPohrana.Items.Add(droppedItem);
                 checkBoxPohrana.Checked = true;
             }
+            OmoguciGumbNaruci();
         }
 
         private void listBoxNapajanje_DragEnter(object sender, DragEventArgs e)
@@ -158,6 +162,7 @@ namespace PC_for_you
                 listBoxNapajanje.Items.Add(droppedItem);
                 checkBoxNapajanje.Checked = true;
             }
+            OmoguciGumbNaruci();
         }
 
         private void listBoxKuciste_DragEnter(object sender, DragEventArgs e)
@@ -184,6 +189,7 @@ namespace PC_for_you
                 listBoxKuciste.Items.Add(droppedItem);
                 checkBoxKuciste.Checked = true;
             }
+            OmoguciGumbNaruci();
         }
 
         private void listBoxMaticna_DragEnter(object sender, DragEventArgs e)
@@ -210,6 +216,23 @@ namespace PC_for_you
                 listBoxMaticna.Items.Add(droppedItem);
                 checkBoxMaticna.Checked = true;
             }
+            OmoguciGumbNaruci();
+        }
+        private void OmoguciGumbNaruci()
+        {
+            if(checkBoxRAM.Checked || checkBoxProcesor.Checked || checkBoxPohrana.Checked || checkBoxNapajanje.Checked || checkBoxMaticna.Checked
+                || checkBoxKuciste.Checked || checkBoxGraficka.Checked)
+            {
+                btnNaruci.Enabled = true;
+            }
+            else
+            {
+                btnNaruci.Enabled = false;
+            }
+        }
+        private void btnNaruci_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
