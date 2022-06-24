@@ -80,6 +80,7 @@
             this.btnSloziRacunalo.TabIndex = 4;
             this.btnSloziRacunalo.Text = "Složi svoje računalo";
             this.btnSloziRacunalo.UseVisualStyleBackColor = true;
+            this.btnSloziRacunalo.Click += new System.EventHandler(this.btnSloziRacunalo_Click);
             // 
             // UCKomponente
             // 

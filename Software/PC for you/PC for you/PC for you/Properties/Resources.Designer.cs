@@ -69,5 +69,15 @@ namespace PC_for_you.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RacunaloKostur {
+            get {
+                object obj = ResourceManager.GetObject("RacunaloKostur", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -110,6 +110,12 @@
     <Compile Include="RegistracijaForm.Designer.cs">
       <DependentUpon>RegistracijaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SloziRacunaloForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SloziRacunaloForm.Designer.cs">
+      <DependentUpon>SloziRacunaloForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="uloga.cs">
       <DependentUpon>PI2233_DB.tt</DependentUpon>
     </Compile>
@@ -140,9 +146,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RegistracijaForm.resx">
       <DependentUpon>RegistracijaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SloziRacunaloForm.resx">
+      <DependentUpon>SloziRacunaloForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCKomponente.resx">
       <DependentUpon>UCKomponente.cs</DependentUpon>
@@ -182,6 +192,7 @@
       <DependentUpon>PI2233_DB.edmx</DependentUpon>
       <LastGenOutput>PI2233_DB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\RacunaloKostur.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
