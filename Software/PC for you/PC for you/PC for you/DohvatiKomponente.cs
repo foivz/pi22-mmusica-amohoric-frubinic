@@ -115,6 +115,7 @@ namespace PC_for_you
                                             Proizvodac = p.Proizvodac,
                                             Potrosnja = p.Potrosnja,
                                             Interface = p.Interface,
+                                            Kapacitet = p.KapacitetPohrane,
                                             PodrzavanaMaticna = p.Podrzavana_maticna,
                                             Cijena = p.Cijena
                                         }).ToList();

@@ -118,6 +118,12 @@
     <Compile Include="UserControls\UCKomponente.Designer.cs">
       <DependentUpon>UCKomponente.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCKosarica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCKosarica.Designer.cs">
+      <DependentUpon>UCKosarica.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="PC for you.resx">
       <DependentUpon>PC for you.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCKomponente.resx">
       <DependentUpon>UCKomponente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCKosarica.resx">
+      <DependentUpon>UCKosarica.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="PI2233_DB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

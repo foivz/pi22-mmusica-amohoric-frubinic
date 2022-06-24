@@ -66,23 +66,33 @@ namespace PC_for_you.UserControls
             {
                 using (var context = new PI2233_DBEntities())
                 {
-                    var mat = from m in context.maticna
-                               where m.IdMaticne == komId
-                               select m;
+                    maticna mat = null;
+                    foreach (maticna item in context.maticna)
+                    {
+                        if (item.IdMaticne == komId)
+                        {
+                            mat = item;
+                            break;
+                        }
+                    }
 
-                    listaMaticna.Add(mat as maticna);
-
+                    listaMaticna.Add(mat);
                 }
             }
             else 
             {
                 using (var context = new PI2233_DBEntities())
                 {
-                    var komp = from k in context.komponenta
-                               where k.IdKomponenta == komId
-                               select k;
-
-                    listaKomponenata.Add(komp as komponenta);
+                    komponenta komp = null;
+                    foreach (komponenta item in context.komponenta)
+                    {
+                        if (item.IdKomponenta == komId)
+                        {
+                            komp = item;
+                            break;
+                        }
+                    }
+                    listaKomponenata.Add(komp);
 
                 }
             }

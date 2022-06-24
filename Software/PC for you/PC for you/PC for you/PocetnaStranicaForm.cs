@@ -67,5 +67,11 @@ namespace PC_for_you
             panelContainer.Controls.Add(userControl);
             userControl.BringToFront();
         }
+
+        private void bntKosarica_Click(object sender, EventArgs e)
+        {
+            UCKosarica ucKosarice = new UCKosarica(listaKomponenata, listaMaticna);
+            AddUserControl(ucKosarice);
+        }
     }
 }
