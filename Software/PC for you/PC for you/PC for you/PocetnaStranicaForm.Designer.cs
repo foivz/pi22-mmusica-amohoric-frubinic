@@ -100,7 +100,7 @@
             this.btnUredivanjeKomponenata.Size = new System.Drawing.Size(114, 42);
             this.btnUredivanjeKomponenata.TabIndex = 6;
             this.btnUredivanjeKomponenata.Text = "Uređivanje komponenata";
-            this.btnUredivanjeKomponenata.Click += new System.EventHandler(this.btnUredivanjeKomponenata_Click);
+           
             // 
             // btnSveNarudzbe
             // 
