@@ -76,7 +76,12 @@ namespace PC_for_you.UserControls
                         }
                     }
 
-                    listaMaticna.Add(mat);
+                    if(mat!= null)
+                    {
+                        listaMaticna.Add(mat);
+                        MessageBox.Show("Uspješno ste dodali komponentu u košaricu");
+                    }
+                   
                 }
             }
             else 
@@ -92,7 +97,12 @@ namespace PC_for_you.UserControls
                             break;
                         }
                     }
-                    listaKomponenata.Add(komp);
+                    if(komp!= null)
+                    {
+                        listaKomponenata.Add(komp);
+                        MessageBox.Show("Uspješno ste dodali komponentu u košaricu");
+                    }
+                    
 
                 }
             }
