@@ -108,5 +108,11 @@ namespace PC_for_you.UserControls
             }
             
         }
+
+        private void btnSloziRacunalo_Click(object sender, EventArgs e)
+        {
+            SloziRacunaloForm sloziRacunaloForm = new SloziRacunaloForm();
+            sloziRacunaloForm.Show();
+        }
     }
 }
