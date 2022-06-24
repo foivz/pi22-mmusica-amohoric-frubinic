@@ -16,5 +16,35 @@ namespace PC_for_you
         {
             InitializeComponent();
         }
+
+        private void checkBoxProcesor_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxGraficka_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxRAM_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxPohrana_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxMaticna_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxNapajanje_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

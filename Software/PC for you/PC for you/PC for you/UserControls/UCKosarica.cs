@@ -30,6 +30,7 @@ namespace PC_for_you.UserControls
 
         private void NapuniListuKomponenataKosarice()
         {
+            listaKomponenataZaKosaricu.Clear();
             foreach (komponenta item in listaKomponenata)
             {
                 KomponentaZaKosaricu novaKomponenta = new KomponentaZaKosaricu

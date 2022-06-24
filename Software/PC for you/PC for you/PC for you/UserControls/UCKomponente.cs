@@ -114,5 +114,18 @@ namespace PC_for_you.UserControls
             SloziRacunaloForm sloziRacunaloForm = new SloziRacunaloForm();
             sloziRacunaloForm.Show();
         }
+
+        private void btnOdaberiKomponentu_Click(object sender, EventArgs e)
+        {
+            
+            
+            MessageBox.Show("Komponentu u kućici iznad možete sada drag and droppat na kostur računala!");
+        }
+
+        private void listBoxKomponenta_MouseDown(object sender, MouseEventArgs e)
+        {
+            
+
+        }
     }
 }
