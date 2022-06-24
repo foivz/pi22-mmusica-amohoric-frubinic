@@ -263,6 +263,7 @@ namespace PC_for_you
             komponentaZaKosaricu.DodajKomponentuZaNarudzbu(new KreacijaNarudzbe(IdPohrana, "Pohrana"));
             komponentaZaKosaricu.DodajKomponentuZaNarudzbu(new KreacijaNarudzbe(IdGraficka, "Graficka"));
             komponentaZaKosaricu.DodajKomponentuZaNarudzbu(new KreacijaNarudzbe(IdMemorija, "RAM"));
+
         }
     }
 }

@@ -69,6 +69,7 @@ namespace PC_for_you
             {
                 MessageBox.Show(greska);
             }
+            Sesija.DodajKorisnika(KorimePrijavljenog);
             MessageBox.Show("Prijavljeni korisnik: " + KorimePrijavljenog + " - " + UlogaPrijavljenog);
             if(UlogaPrijavljenog != 0)
             {
