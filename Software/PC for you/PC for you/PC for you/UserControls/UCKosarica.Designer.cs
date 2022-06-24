@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvKosarica = new System.Windows.Forms.DataGridView();
-            this.btnNarucu = new System.Windows.Forms.Button();
+            this.btnNaruci = new System.Windows.Forms.Button();
             this.btnOtkazi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKosarica)).BeginInit();
             this.SuspendLayout();
@@ -42,14 +42,15 @@
             this.dgvKosarica.Size = new System.Drawing.Size(772, 408);
             this.dgvKosarica.TabIndex = 0;
             // 
-            // btnNarucu
+            // btnNaruci
             // 
-            this.btnNarucu.Location = new System.Drawing.Point(12, 428);
-            this.btnNarucu.Name = "btnNarucu";
-            this.btnNarucu.Size = new System.Drawing.Size(772, 34);
-            this.btnNarucu.TabIndex = 1;
-            this.btnNarucu.Text = "Naruči";
-            this.btnNarucu.UseVisualStyleBackColor = true;
+            this.btnNaruci.Location = new System.Drawing.Point(12, 428);
+            this.btnNaruci.Name = "btnNaruci";
+            this.btnNaruci.Size = new System.Drawing.Size(772, 34);
+            this.btnNaruci.TabIndex = 1;
+            this.btnNaruci.Text = "Naruči";
+            this.btnNaruci.UseVisualStyleBackColor = true;
+            this.btnNaruci.Click += new System.EventHandler(this.btnNaruci_Click);
             // 
             // btnOtkazi
             // 
@@ -59,13 +60,14 @@
             this.btnOtkazi.TabIndex = 2;
             this.btnOtkazi.Text = "Otkaži narudžbu";
             this.btnOtkazi.UseVisualStyleBackColor = true;
+            this.btnOtkazi.Click += new System.EventHandler(this.btnOtkazi_Click);
             // 
             // UCKosarica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnOtkazi);
-            this.Controls.Add(this.btnNarucu);
+            this.Controls.Add(this.btnNaruci);
             this.Controls.Add(this.dgvKosarica);
             this.Name = "UCKosarica";
             this.Size = new System.Drawing.Size(797, 502);
@@ -78,7 +80,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvKosarica;
-        private System.Windows.Forms.Button btnNarucu;
+        private System.Windows.Forms.Button btnNaruci;
         private System.Windows.Forms.Button btnOtkazi;
     }
 }

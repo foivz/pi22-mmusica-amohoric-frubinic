@@ -67,5 +67,26 @@ namespace PC_for_you.UserControls
             dgvKosarica.DataSource = listaKomponenataZaKosaricu;
         }
 
+        private void btnOtkazi_Click(object sender, EventArgs e)
+        {
+            listaKomponenataZaKosaricu.Clear();
+            listaKomponenata.Clear();
+            listaMaticna.Clear();
+            RefreshDGV();
+            MessageBox.Show("Vaša narudžba je otkazana");
+        }
+
+        private void btnNaruci_Click(object sender, EventArgs e)
+        {
+            KreacijaNarudzbe kreacijaNarudzbe = new KreacijaNarudzbe();
+            int duljinaDgv = dgvKosarica.Rows.Count;
+            for (int i = 0; i < duljinaDgv; i++)
+            {
+                int id = int.Parse(dgvKosarica.Rows[i].Cells[0].Value.ToString());
+                string tip = dgvKosarica.Rows[i].Cells[5].Value.ToString();
+                kreacijaNarudzbe.DodajKomponentuZaNarudzbu(new KreacijaNarudzbe(id, tip));
+            }
+            kreacijaNarudzbe.NaruciKomponente();
+        }
     }
 }

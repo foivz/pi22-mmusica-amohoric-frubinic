@@ -133,7 +133,7 @@ namespace PC_for_you
                     komponentaContext.SaveChanges();
                 }
             }
-            
+            ListaKomponenataZaNarudzbu.Clear();   
         }
 
     }
