@@ -65,7 +65,44 @@ namespace PC_for_you.UserControls
         {
             dgvKosarica.DataSource = null;
             dgvKosarica.DataSource = listaKomponenataZaKosaricu;
+            int duljinaDgv = dgvKosarica.Rows.Count;
+            double kolicina=0;
+            for (int i = 0; i < duljinaDgv; i++)
+            {
+                kolicina += double.Parse(dgvKosarica.Rows[i].Cells[4].Value.ToString());
+            }
+            tboxUkupno.Text=kolicina.ToString();
         }
 
+        private void btnOtkazi_Click(object sender, EventArgs e)
+        {
+            OcistiKosaricu();
+            MessageBox.Show("Vaša narudžba je otkazana");
+        }
+
+        private void btnNaruci_Click(object sender, EventArgs e)
+        {
+            KreacijaNarudzbe kreacijaNarudzbe = new KreacijaNarudzbe();
+            int duljinaDgv = dgvKosarica.Rows.Count;
+            
+            for (int i = 0; i < duljinaDgv; i++)
+            {
+                int id = int.Parse(dgvKosarica.Rows[i].Cells[0].Value.ToString());
+                string tip = dgvKosarica.Rows[i].Cells[5].Value.ToString();
+            
+                kreacijaNarudzbe.DodajKomponentuZaNarudzbu(new KreacijaNarudzbe(id, tip));
+            }
+            kreacijaNarudzbe.NaruciKomponente();
+            OcistiKosaricu();
+            MessageBox.Show("Uspješno ste naručili željene komponente!");
+        }
+        private void OcistiKosaricu() 
+        {
+            listaKomponenataZaKosaricu.Clear();
+            listaKomponenata.Clear();
+            listaMaticna.Clear();
+            tboxUkupno.Clear();
+            RefreshDGV();
+        }
     }
 }
