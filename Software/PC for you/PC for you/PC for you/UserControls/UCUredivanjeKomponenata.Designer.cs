@@ -81,6 +81,7 @@
             this.btnAzurirajOdabranu.TabIndex = 5;
             this.btnAzurirajOdabranu.Text = "Ažuriraj odabranu komponentu";
             this.btnAzurirajOdabranu.UseVisualStyleBackColor = true;
+            this.btnAzurirajOdabranu.Click += new System.EventHandler(this.btnAzurirajOdabranu_Click);
             // 
             // btnObrisiKomponentu
             // 
@@ -90,6 +91,7 @@
             this.btnObrisiKomponentu.TabIndex = 6;
             this.btnObrisiKomponentu.Text = "Obriši odabranu komponentu";
             this.btnObrisiKomponentu.UseVisualStyleBackColor = true;
+            this.btnObrisiKomponentu.Click += new System.EventHandler(this.btnObrisiKomponentu_Click);
             // 
             // UCUredivanjeKomponenata
             // 
