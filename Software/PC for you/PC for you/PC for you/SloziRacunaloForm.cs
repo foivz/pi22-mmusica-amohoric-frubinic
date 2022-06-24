@@ -221,7 +221,7 @@ namespace PC_for_you
         private void OmoguciGumbNaruci()
         {
             if(checkBoxRAM.Checked && checkBoxProcesor.Checked && checkBoxPohrana.Checked && checkBoxNapajanje.Checked && checkBoxMaticna.Checked
-                || checkBoxKuciste.Checked && checkBoxGraficka.Checked)
+                && checkBoxKuciste.Checked && checkBoxGraficka.Checked)
             {
                 btnNaruci.Enabled = true;
             }
