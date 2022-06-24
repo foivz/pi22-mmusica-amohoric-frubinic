@@ -146,6 +146,7 @@ namespace PC_for_you
                 }
                 using (var context = new PI2233_DBEntities())
                 {
+                    context.komponenta.Attach(komponenta);
                     context.komponenta.Add(komponenta);
                     context.SaveChanges();
                 }
