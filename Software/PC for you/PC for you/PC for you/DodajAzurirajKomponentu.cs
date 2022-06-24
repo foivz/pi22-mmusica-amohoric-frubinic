@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
@@ -31,8 +32,29 @@ namespace PC_for_you
         {
             using (var context = new PI2233_DBEntities())
             {
-                maticna maticna = new maticna();
-                komponenta komponenta = new komponenta();
+                komponenta komponenta = null; 
+                maticna maticna = null;
+                if(ID == 0)
+                {
+                    maticna = new maticna();
+                    komponenta = new komponenta();
+                }
+                else
+                {
+                    if(Tip == "Maticna")
+                    {
+                        maticna = (from m in context.maticna
+                                   where m.IdMaticne == ID
+                                   select m).ToList().First();
+                    }
+                    else
+                    {
+                        komponenta = (from k in context.komponenta
+                                      where k.IdKomponenta == ID
+                                      select k).ToList().First();
+                    }
+                }
+                
             string greska = "";
             if (txtNazivKomponente.Text == "" || txtProizvodac.Text == "" || txtCijena.Text == "" || txtPotrosnja.Text =="")
                 greska = "Molimo popunite sva polja!";
@@ -172,14 +194,14 @@ namespace PC_for_you
                     {
                         if(Tip == "Maticna")
                         {
-                            context.maticna.Attach(maticna);
-                            context.maticna.Add(maticna);
+                            
+                            context.maticna.AddOrUpdate(maticna);
                             context.SaveChanges();
                         }
                         else
                         {
-                            context.komponenta.Attach(komponenta);
-                            context.komponenta.Add(komponenta);
+                            
+                            context.komponenta.AddOrUpdate(komponenta);
                             context.SaveChanges();
                         }
                         
@@ -264,6 +286,67 @@ namespace PC_for_you
         private void DodajAzurirajKomponentu_Load(object sender, EventArgs e)
         {
             PrikaziSkarij();
+            if(ID != 0)
+            {
+                
+                    using (var context = new PI2233_DBEntities())
+                        {if (Tip != "Maticna")
+                            {
+                        var query = (from k in context.komponenta
+                                     where k.IdKomponenta == ID
+                                     select k).ToList();
+                        PopuniFormu(query);
+                    }
+                    else
+                    {
+                        var query = (from m in context.maticna
+                                     where m.IdMaticne == ID
+                                     select m).ToList();
+                        PopuniFormu(query);
+                    }
+                }
+            }
+        }
+
+        private void PopuniFormu(List<maticna> query)
+        {
+            foreach(maticna maticna in query)
+            {
+                txtProizvodac.Text = maticna.Proizvodac;
+                txtCijena.Text = maticna.Cijena.ToString();
+                txtNazivKomponente.Text = maticna.Naziv;
+                txtPotrosnja.Text = maticna.Potrosnja.ToString();
+                txtSocekt.Text = maticna.Socket;
+                txtVelicinaMaticne.Text = maticna.Velicina;
+                txtTipMemorije.Text = maticna.Tip_memorije;
+                numBrojModula.Value = maticna.Broj_modula_za_memoriju;
+                chkPCIe8.Checked = Convert.ToBoolean(maticna.InterfacePCIe8);
+                chkPCIe16.Checked = Convert.ToBoolean(maticna.InterfacePCIe16); ;
+            }
+        }
+
+        private void PopuniFormu(List<komponenta> query)
+        {
+            foreach (komponenta komponenta in query)
+            {
+                txtIDKomponente.Text = komponenta.IdKomponenta.ToString();
+                txtVrstaKomponente.Text = Tip;
+                txtNazivKomponente.Text = komponenta.Naziv;
+                txtProizvodac.Text = komponenta.Proizvodac;
+                txtPotrosnja.Text = komponenta.Potrosnja.ToString();
+                txtSocekt.Text = komponenta.Socket;
+                txtTipMemorije.Text = komponenta.Tip_memorije;
+                txtBrzina.Text = komponenta.Brzina;
+                txtVelicinaMemorije.Text = komponenta.Velicina_memorije;
+                txtInterface.Text = komponenta.Interface;
+                txtDuzinaGraficke.Text = komponenta.Duzina_graficke.ToString();
+                txtVRAM.Text = komponenta.Vram;
+                txtKapacitetNapajanja.Text = komponenta.Kapacitet_napajanja.ToString();
+                txtMaxGraficka.Text = komponenta.Maksimalna_duzina_graficke.ToString();
+                txtPodrzavanaMaticna.Text = komponenta.Podrzavana_maticna;
+                txtKapacitetPohrane.Text = komponenta.KapacitetPohrane;
+                txtCijena.Text = komponenta.Cijena.ToString();
+            }
         }
     }
 }

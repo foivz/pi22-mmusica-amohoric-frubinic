@@ -81,6 +81,7 @@
             this.btnAzurirajOdabranu.TabIndex = 5;
             this.btnAzurirajOdabranu.Text = "Ažuriraj odabranu komponentu";
             this.btnAzurirajOdabranu.UseVisualStyleBackColor = true;
+            this.btnAzurirajOdabranu.Click += new System.EventHandler(this.btnAzurirajOdabranu_Click);
             // 
             // btnObrisiKomponentu
             // 

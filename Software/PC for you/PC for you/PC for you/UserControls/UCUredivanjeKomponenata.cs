@@ -54,5 +54,14 @@ namespace PC_for_you.UserControls
             form.ShowDialog();
             DohvatiPodatke();
         }
+
+        private void btnAzurirajOdabranu_Click(object sender, EventArgs e)
+        {
+            string tip = cmbVrsteKomponenata.SelectedItem.ToString();
+            int id = Convert.ToInt32(dgvUredivanjeKomponenata.CurrentRow.Cells[0].Value);
+            DodajAzurirajKomponentu form = new DodajAzurirajKomponentu(tip, id);
+            form.ShowDialog();
+            DohvatiPodatke();
+        }
     }
 }
