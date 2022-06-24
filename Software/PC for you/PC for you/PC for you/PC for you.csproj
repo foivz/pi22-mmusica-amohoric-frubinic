@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DodajAzurirajKomponentu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajAzurirajKomponentu.Designer.cs">
+      <DependentUpon>DodajAzurirajKomponentu.cs</DependentUpon>
+    </Compile>
     <Compile Include="DohvatiKomponente.cs" />
     <Compile Include="komponenta.cs">
       <DependentUpon>PI2233_DB.tt</DependentUpon>
@@ -128,10 +134,18 @@
     <Compile Include="UserControls\UCKosarica.cs">
       <SubType>UserControl</SubType>
     </Compile>
-
     <Compile Include="UserControls\UCKosarica.Designer.cs">
       <DependentUpon>UCKosarica.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCUredivanjeKomponenata.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCUredivanjeKomponenata.Designer.cs">
+      <DependentUpon>UCUredivanjeKomponenata.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DodajAzurirajKomponentu.resx">
+      <DependentUpon>DodajAzurirajKomponentu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PC for you.resx">
       <DependentUpon>PC for you.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCKosarica.resx">
       <DependentUpon>UCKosarica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCUredivanjeKomponenata.resx">
+      <DependentUpon>UCUredivanjeKomponenata.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="PI2233_DB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

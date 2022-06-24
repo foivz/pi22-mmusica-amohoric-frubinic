@@ -76,7 +76,8 @@ namespace PC_for_you
 
         private void btnUredivanjeKomponenata_Click(object sender, EventArgs e)
         {
-            
+            UCUredivanjeKomponenata uCUredivanjeKomponenata = new UCUredivanjeKomponenata();
+            AddUserControl(uCUredivanjeKomponenata);
         }
     }
 }
