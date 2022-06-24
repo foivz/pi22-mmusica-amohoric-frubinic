@@ -64,7 +64,7 @@ namespace PC_for_you
             {
                 listBoxRAM.Items.Clear();
                 MessageBox.Show("U ovu kućicu ide samo RAM memorija!");
-                checkBoxProcesor.Checked = false;
+                checkBoxRAM.Checked = false;
             }
             else
             {
