@@ -12,8 +12,10 @@ namespace PC_for_you.UserControls
 {
     public partial class UCKomponente : UserControl
     {
+        private List<komponenta> listaKomponenata;
+        private List<maticna> listaMaticna;
         public static List<string> ListaKomponenata = new List<string>
-        { 
+        {
             "Procesor",
             "Graficka",
             "Napajanje",
@@ -23,8 +25,10 @@ namespace PC_for_you.UserControls
             "Kucista"
 
         };
-        public UCKomponente()
+        public UCKomponente(List<komponenta> listaK, List<maticna> listaM)
         {
+            listaKomponenata = listaK;
+            listaMaticna = listaM;
             InitializeComponent();
         }
 
@@ -51,6 +55,38 @@ namespace PC_for_you.UserControls
         private void cboxKomponente_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshKomponente();
+        }
+
+        private void btnNaruci_Click(object sender, EventArgs e)
+        {
+            var id = dgvKomponente.CurrentRow.Cells[0].Value;
+            int komId = int.Parse(id.ToString());
+
+            if (cboxKomponente.SelectedItem.ToString() == "Maticna")
+            {
+                using (var context = new PI2233_DBEntities())
+                {
+                    var mat = from m in context.maticna
+                               where m.IdMaticne == komId
+                               select m;
+
+                    listaMaticna.Add(mat as maticna);
+
+                }
+            }
+            else 
+            {
+                using (var context = new PI2233_DBEntities())
+                {
+                    var komp = from k in context.komponenta
+                               where k.IdKomponenta == komId
+                               select k;
+
+                    listaKomponenata.Add(komp as komponenta);
+
+                }
+            }
+            
         }
     }
 }
