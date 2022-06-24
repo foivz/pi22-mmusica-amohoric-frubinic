@@ -41,7 +41,7 @@ namespace PC_for_you.UserControls
         private void RefreshKomponente()
         {
             string tip = cboxKomponente.SelectedItem.ToString();
-            DohvatiKomponente dohvatiKomponente = new DohvatiKomponente(tip,dgvKomponente);
+            DohvatiKomponente dohvatiKomponente = new DohvatiKomponente(tip, dgvKomponente);
             dohvatiKomponente.DohvatiZeljenuKomponentu();
         }
 
@@ -76,15 +76,15 @@ namespace PC_for_you.UserControls
                         }
                     }
 
-                    if(mat!= null)
+                    if (mat != null)
                     {
                         listaMaticna.Add(mat);
                         MessageBox.Show("Uspješno ste dodali komponentu u košaricu");
                     }
-                   
+
                 }
             }
-            else 
+            else
             {
                 using (var context = new PI2233_DBEntities())
                 {
@@ -97,16 +97,16 @@ namespace PC_for_you.UserControls
                             break;
                         }
                     }
-                    if(komp!= null)
+                    if (komp != null)
                     {
                         listaKomponenata.Add(komp);
                         MessageBox.Show("Uspješno ste dodali komponentu u košaricu");
                     }
-                    
+
 
                 }
             }
-            
+
         }
 
         private void btnSloziRacunalo_Click(object sender, EventArgs e)
