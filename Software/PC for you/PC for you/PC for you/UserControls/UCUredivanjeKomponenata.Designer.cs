@@ -91,6 +91,7 @@
             this.btnObrisiKomponentu.TabIndex = 6;
             this.btnObrisiKomponentu.Text = "Obriši odabranu komponentu";
             this.btnObrisiKomponentu.UseVisualStyleBackColor = true;
+            this.btnObrisiKomponentu.Click += new System.EventHandler(this.btnObrisiKomponentu_Click);
             // 
             // UCUredivanjeKomponenata
             // 

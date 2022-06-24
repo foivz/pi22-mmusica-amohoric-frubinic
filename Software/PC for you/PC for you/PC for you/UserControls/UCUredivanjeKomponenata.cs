@@ -63,5 +63,38 @@ namespace PC_for_you.UserControls
             form.ShowDialog();
             DohvatiPodatke();
         }
+
+        private void btnObrisiKomponentu_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgvUredivanjeKomponenata.CurrentRow.Cells[0].Value);
+            IzbrisiKomponentu(id);
+            DohvatiPodatke();
+        }
+
+        private void IzbrisiKomponentu(int id)
+        {
+            using (var context = new PI2233_DBEntities())
+            {
+                
+                if(cmbVrsteKomponenata.SelectedItem.ToString() != "Maticna")
+                {
+                   var query = (from k in context.komponenta
+                             where k.IdKomponenta == id
+                             select k).ToList().First();
+                    context.komponenta.Attach(query);
+                    context.komponenta.Remove(query);
+                    context.SaveChanges();
+                }
+                else
+                {
+                   var query = (from m in context.maticna
+                             where m.IdMaticne == id
+                             select m).ToList().First();
+                    context.maticna.Attach(query);
+                    context.maticna.Remove(query);
+                    context.SaveChanges();
+                }
+            }
+        }
     }
 }

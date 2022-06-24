@@ -46,6 +46,7 @@ namespace PC_for_you
                         maticna = (from m in context.maticna
                                    where m.IdMaticne == ID
                                    select m).ToList().First();
+                        komponenta = new komponenta();
                     }
                     else
                     {
@@ -194,15 +195,32 @@ namespace PC_for_you
                     {
                         if(Tip == "Maticna")
                         {
+                            if(ID == 0)
+                            {
+                                context.maticna.Attach(maticna);
+                                context.maticna.Add(maticna);
+                                context.SaveChanges();
+                            }
+                            else
+                            {
+                                context.maticna.AddOrUpdate(maticna);
+                                context.SaveChanges();
+                            }
                             
-                            context.maticna.AddOrUpdate(maticna);
-                            context.SaveChanges();
                         }
                         else
                         {
-                            
-                            context.komponenta.AddOrUpdate(komponenta);
-                            context.SaveChanges();
+                            if (ID == 0)
+                            {
+                                context.komponenta.Attach(komponenta);
+                                context.komponenta.Add(komponenta);
+                                context.SaveChanges();
+                            }
+                            else
+                            {
+                                context.komponenta.AddOrUpdate(komponenta);
+                                context.SaveChanges();
+                            }
                         }
                         
                         this.Close();
