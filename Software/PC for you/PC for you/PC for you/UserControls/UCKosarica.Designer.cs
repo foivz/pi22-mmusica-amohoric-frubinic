@@ -31,6 +31,8 @@
             this.dgvKosarica = new System.Windows.Forms.DataGridView();
             this.btnNaruci = new System.Windows.Forms.Button();
             this.btnOtkazi = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tboxUkupno = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKosarica)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,7 +41,7 @@
             this.dgvKosarica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKosarica.Location = new System.Drawing.Point(12, 14);
             this.dgvKosarica.Name = "dgvKosarica";
-            this.dgvKosarica.Size = new System.Drawing.Size(772, 408);
+            this.dgvKosarica.Size = new System.Drawing.Size(772, 371);
             this.dgvKosarica.TabIndex = 0;
             // 
             // btnNaruci
@@ -62,10 +64,29 @@
             this.btnOtkazi.UseVisualStyleBackColor = true;
             this.btnOtkazi.Click += new System.EventHandler(this.btnOtkazi_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(298, 402);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Ukupno:";
+            // 
+            // tboxUkupno
+            // 
+            this.tboxUkupno.Enabled = false;
+            this.tboxUkupno.Location = new System.Drawing.Point(352, 399);
+            this.tboxUkupno.Name = "tboxUkupno";
+            this.tboxUkupno.Size = new System.Drawing.Size(100, 20);
+            this.tboxUkupno.TabIndex = 4;
+            // 
             // UCKosarica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tboxUkupno);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOtkazi);
             this.Controls.Add(this.btnNaruci);
             this.Controls.Add(this.dgvKosarica);
@@ -74,6 +95,7 @@
             this.Load += new System.EventHandler(this.UCKosarica_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKosarica)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -82,5 +104,7 @@
         private System.Windows.Forms.DataGridView dgvKosarica;
         private System.Windows.Forms.Button btnNaruci;
         private System.Windows.Forms.Button btnOtkazi;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tboxUkupno;
     }
 }
