@@ -35,7 +35,6 @@
             this.btnSloziRacunalo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.listBoxKomponenta = new System.Windows.Forms.ListBox();
-            this.btnOdaberiKomponentu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKomponente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +63,7 @@
             this.dgvKomponente.Name = "dgvKomponente";
             this.dgvKomponente.Size = new System.Drawing.Size(746, 304);
             this.dgvKomponente.TabIndex = 2;
+            this.dgvKomponente.SelectionChanged += new System.EventHandler(this.dgvKomponente_SelectionChanged);
             // 
             // btnNaruci
             // 
@@ -103,21 +103,10 @@
             this.listBoxKomponenta.TabIndex = 8;
             this.listBoxKomponenta.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBoxKomponenta_MouseDown);
             // 
-            // btnOdaberiKomponentu
-            // 
-            this.btnOdaberiKomponentu.Location = new System.Drawing.Point(598, 473);
-            this.btnOdaberiKomponentu.Name = "btnOdaberiKomponentu";
-            this.btnOdaberiKomponentu.Size = new System.Drawing.Size(178, 23);
-            this.btnOdaberiKomponentu.TabIndex = 9;
-            this.btnOdaberiKomponentu.Text = "Odaberi komponentu";
-            this.btnOdaberiKomponentu.UseVisualStyleBackColor = true;
-            this.btnOdaberiKomponentu.Click += new System.EventHandler(this.btnOdaberiKomponentu_Click);
-            // 
             // UCKomponente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnOdaberiKomponentu);
             this.Controls.Add(this.listBoxKomponenta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSloziRacunalo);
@@ -143,6 +132,5 @@
         private System.Windows.Forms.Button btnSloziRacunalo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listBoxKomponenta;
-        private System.Windows.Forms.Button btnOdaberiKomponentu;
     }
 }
