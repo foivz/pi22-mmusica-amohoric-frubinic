@@ -69,10 +69,7 @@ namespace PC_for_you.UserControls
 
         private void btnOtkazi_Click(object sender, EventArgs e)
         {
-            listaKomponenataZaKosaricu.Clear();
-            listaKomponenata.Clear();
-            listaMaticna.Clear();
-            RefreshDGV();
+            OcistiKosaricu();
             MessageBox.Show("Vaša narudžba je otkazana");
         }
 
@@ -87,6 +84,15 @@ namespace PC_for_you.UserControls
                 kreacijaNarudzbe.DodajKomponentuZaNarudzbu(new KreacijaNarudzbe(id, tip));
             }
             kreacijaNarudzbe.NaruciKomponente();
+            OcistiKosaricu();
+            MessageBox.Show("Uspješno ste naručili željene komponente!");
+        }
+        private void OcistiKosaricu() 
+        {
+            listaKomponenataZaKosaricu.Clear();
+            listaKomponenata.Clear();
+            listaMaticna.Clear();
+            RefreshDGV();
         }
     }
 }
