@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnUredivanjeKomponenata = new Guna.UI2.WinForms.Guna2Button();
             this.btnSveNarudzbe = new Guna.UI2.WinForms.Guna2Button();
@@ -39,6 +38,7 @@
             this.bntKosarica = new Guna.UI2.WinForms.Guna2Button();
             this.btnKomponente = new Guna.UI2.WinForms.Guna2Button();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -65,16 +65,6 @@
             this.label1.Size = new System.Drawing.Size(159, 36);
             this.label1.TabIndex = 1;
             this.label1.Text = "PC for you";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::PC_for_you.Properties.Resources.Logo;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(67, 56);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -110,6 +100,7 @@
             this.btnUredivanjeKomponenata.Size = new System.Drawing.Size(114, 42);
             this.btnUredivanjeKomponenata.TabIndex = 6;
             this.btnUredivanjeKomponenata.Text = "Uređivanje komponenata";
+            this.btnUredivanjeKomponenata.Click += new System.EventHandler(this.btnUredivanjeKomponenata_Click);
             // 
             // btnSveNarudzbe
             // 

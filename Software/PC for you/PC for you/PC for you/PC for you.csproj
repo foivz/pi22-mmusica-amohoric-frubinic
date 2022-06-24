@@ -122,6 +122,7 @@
     <Compile Include="UserControls\UCKosarica.cs">
       <SubType>UserControl</SubType>
     </Compile>
+
     <Compile Include="UserControls\UCKosarica.Designer.cs">
       <DependentUpon>UCKosarica.cs</DependentUpon>
     </Compile>

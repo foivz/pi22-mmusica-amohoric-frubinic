@@ -1,4 +1,4 @@
-﻿using PC_for_you.UserControls;
+using PC_for_you.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +13,6 @@ namespace PC_for_you
 {
     public partial class PocetnaStranicaForm : Form
     {
-        
-        private static List<komponenta> listaKomponenata = new List<komponenta>();
-        private static List<maticna> listaMaticna = new List<maticna>();
         private int uloga;
         private string korime;
         public PocetnaStranicaForm(int uloga, string korime)
@@ -27,7 +24,8 @@ namespace PC_for_you
 
         private void PocetnaStranicaForm_Load(object sender, EventArgs e)
         {
-            PostaviKomponente();
+            UCKomponente ucKomponente = new UCKomponente();
+            AddUserControl(ucKomponente);
             PrikaziSakrijNavigaciju();
         }
 
@@ -51,14 +49,11 @@ namespace PC_for_you
             this.Close();
         }
 
-        public void PostaviKomponente() 
-        {
-            UCKomponente ucKomponente = new UCKomponente(listaKomponenata, listaMaticna);
-            AddUserControl(ucKomponente);
-        }
         private void btnKomponente_Click(object sender, EventArgs e)
         {
-            PostaviKomponente();
+
+            UCKomponente ucKomponente = new UCKomponente();
+            AddUserControl(ucKomponente);
         }
         private void AddUserControl(UserControl userControl) 
         {
@@ -66,12 +61,7 @@ namespace PC_for_you
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(userControl);
             userControl.BringToFront();
-        }
 
-        private void bntKosarica_Click(object sender, EventArgs e)
-        {
-            UCKosarica ucKosarice = new UCKosarica(listaKomponenata, listaMaticna);
-            AddUserControl(ucKosarice);
         }
     }
 }
