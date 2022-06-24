@@ -73,5 +73,10 @@ namespace PC_for_you
             UCKosarica ucKosarice = new UCKosarica(listaKomponenata, listaMaticna);
             AddUserControl(ucKosarice);
         }
+
+        private void btnUredivanjeKomponenata_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
