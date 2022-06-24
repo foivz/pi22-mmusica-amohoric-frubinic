@@ -84,6 +84,7 @@ namespace PC_for_you
                             var query = (from m in context.maticna
                                         select m).ToList();
                             Dgv.DataSource = query;
+                            Dgv.Columns["narucuje"].Visible = false;
                             break;
                         }
                     case "RAM":
@@ -116,7 +117,6 @@ namespace PC_for_you
                                             Potrosnja = p.Potrosnja,
                                             Interface = p.Interface,
                                             Kapacitet = p.KapacitetPohrane,
-                                            PodrzavanaMaticna = p.Podrzavana_maticna,
                                             Cijena = p.Cijena
                                         }).ToList();
                             Dgv.DataSource = query;
