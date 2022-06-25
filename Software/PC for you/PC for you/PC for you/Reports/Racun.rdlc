@@ -15,33 +15,33 @@
       </Rectangle>
       <Rectangle Name="Rectangle1">
         <KeepTogether>true</KeepTogether>
-        <Top>6.73778cm</Top>
+        <Top>6.7907cm</Top>
         <Left>10.22804cm</Left>
-        <Height>1.41521cm</Height>
-        <Width>5.9525cm</Width>
+        <Height>1.15062cm</Height>
+        <Width>6.12889cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
-            <Style>Solid</Style>
+            <Style>Dotted</Style>
           </Border>
           <TopBorder>
             <Color>Black</Color>
-            <Style>Solid</Style>
+            <Style>Dotted</Style>
             <Width>1pt</Width>
           </TopBorder>
           <BottomBorder>
             <Color>Black</Color>
-            <Style>Solid</Style>
+            <Style>Dotted</Style>
             <Width>1pt</Width>
           </BottomBorder>
           <LeftBorder>
             <Color>Black</Color>
-            <Style>Solid</Style>
+            <Style>Dotted</Style>
             <Width>1pt</Width>
           </LeftBorder>
           <RightBorder>
             <Color>Black</Color>
-            <Style>Solid</Style>
+            <Style>Dotted</Style>
             <Width>1pt</Width>
           </RightBorder>
         </Style>
@@ -95,7 +95,7 @@
         </Paragraphs>
         <rd:DefaultName>Ime_prezime</rd:DefaultName>
         <Top>3.36558cm</Top>
-        <Left>3.85693cm</Left>
+        <Left>3.05437cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>3</ZIndex>
@@ -127,7 +127,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
         <Top>3.36558cm</Top>
-        <Left>0.86304cm</Left>
+        <Left>0.06048cm</Left>
         <Height>0.6cm</Height>
         <Width>2.8175cm</Width>
         <ZIndex>4</ZIndex>
@@ -156,8 +156,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Adresa</rd:DefaultName>
-        <Top>2.58919cm</Top>
-        <Left>3.85693cm</Left>
+        <Top>2.55391cm</Top>
+        <Left>1.59863cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>5</ZIndex>
@@ -189,9 +189,8 @@
         </Paragraphs>
         <rd:DefaultName>Textbox8</rd:DefaultName>
         <Top>2.58919cm</Top>
-        <Left>0.86304cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.8175cm</Width>
+        <Width>1.38875cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -220,10 +219,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>3.36558cm</Top>
-        <Left>7.16075cm</Left>
+        <Top>4.14197cm</Top>
         <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Width>1.36229cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -250,8 +248,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Datum</rd:DefaultName>
-        <Top>3.36558cm</Top>
-        <Left>9.76659cm</Left>
+        <Top>4.14197cm</Top>
+        <Left>1.57218cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>8</ZIndex>
@@ -331,22 +329,22 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.55292cm</Width>
+              <Width>2.784cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.55292cm</Width>
+              <Width>2.784cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.55292cm</Width>
+              <Width>2.784cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.55292cm</Width>
+              <Width>2.784cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.55292cm</Width>
+              <Width>2.784cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.55292cm</Width>
+              <Width>2.784cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -762,9 +760,9 @@
         </TablixRowHierarchy>
         <DataSetName>DsNaruceneKomponente</DataSetName>
         <Top>5.18266cm</Top>
-        <Left>0.86304cm</Left>
+        <Left>0.06048cm</Left>
         <Height>1.2cm</Height>
-        <Width>15.3175cm</Width>
+        <Width>16.70402cm</Width>
         <ZIndex>11</ZIndex>
         <Style>
           <Border>
