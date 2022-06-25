@@ -47,7 +47,7 @@ namespace PC_for_you
         private void listBoxProcesor_DragDrop(object sender, DragEventArgs e)
         {
             string droppedItem = e.Data.GetData(DataFormats.Text).ToString();
-            IdProcesor = int.Parse(droppedItem[0].ToString()); ;
+            IdProcesor = int.Parse(droppedItem.Split('-')[0].ToString()); ;
 
             bool isValidType = ProvjeraTipa(droppedItem, "Procesor");
             if (!isValidType) 
@@ -69,7 +69,7 @@ namespace PC_for_you
         private void listBoxRAM_DragDrop(object sender, DragEventArgs e)
         {
             string droppedItem = e.Data.GetData(DataFormats.Text).ToString();
-            IdMemorija = int.Parse(droppedItem[0].ToString()); ;
+            IdMemorija = int.Parse(droppedItem.Split('-')[0].ToString()); ;
 
             bool isValidType = ProvjeraTipa(droppedItem, "RAM");
             if (!isValidType)
@@ -106,7 +106,7 @@ namespace PC_for_you
         private void listBoxGraficka_DragDrop(object sender, DragEventArgs e)
         {
             string droppedItem = e.Data.GetData(DataFormats.Text).ToString();
-            IdGraficka = int.Parse(droppedItem[0].ToString());
+            IdGraficka = int.Parse(droppedItem.Split('-')[0].ToString());
 
             bool isValidType = ProvjeraTipa(droppedItem, "Graficka");
             if (!isValidType)
@@ -135,7 +135,7 @@ namespace PC_for_you
         private void listBoxPohrana_DragDrop(object sender, DragEventArgs e)
         {
             string droppedItem = e.Data.GetData(DataFormats.Text).ToString();
-            IdPohrana = int.Parse(droppedItem[0].ToString());
+            IdPohrana = int.Parse(droppedItem.Split('-')[0].ToString());
 
             bool isValidType = ProvjeraTipa(droppedItem, "Pohrana");
             if (!isValidType)
@@ -164,7 +164,7 @@ namespace PC_for_you
         private void listBoxNapajanje_DragDrop(object sender, DragEventArgs e)
         {
             string droppedItem = e.Data.GetData(DataFormats.Text).ToString();
-            IdNapajanje = int.Parse(droppedItem[0].ToString());
+            IdNapajanje = int.Parse(droppedItem.Split('-')[0].ToString());
 
             bool isValidType = ProvjeraTipa(droppedItem, "Napajanje");
             if (!isValidType)
@@ -193,7 +193,7 @@ namespace PC_for_you
         private void listBoxKuciste_DragDrop(object sender, DragEventArgs e)
         {
             string droppedItem = e.Data.GetData(DataFormats.Text).ToString();
-            IdKuciste = int.Parse(droppedItem[0].ToString());
+            IdKuciste = int.Parse(droppedItem.Split('-')[0].ToString());
 
             bool isValidType = ProvjeraTipa(droppedItem, "Kucista");
 
@@ -223,7 +223,7 @@ namespace PC_for_you
         private void listBoxMaticna_DragDrop(object sender, DragEventArgs e)
         {
             string droppedItem = e.Data.GetData(DataFormats.Text).ToString();
-            IdMaticna = int.Parse(droppedItem[0].ToString());
+            IdMaticna = int.Parse(droppedItem.Split('-')[0].ToString());
 
             bool isValidType = ProvjeraTipa(droppedItem, "Maticna");
 

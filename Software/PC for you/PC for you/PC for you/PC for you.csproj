@@ -91,6 +91,7 @@
     <Compile Include="narucuje.cs">
       <DependentUpon>PI2233_DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="KomponentaClass.cs" />
     <Compile Include="narudzba.cs">
       <DependentUpon>PI2233_DB.tt</DependentUpon>
     </Compile>
@@ -194,6 +195,7 @@
     <EmbeddedResource Include="RegistracijaForm.resx">
       <DependentUpon>RegistracijaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RacunMaticna.rdlc" />
     <EmbeddedResource Include="SloziRacunaloForm.resx">
       <DependentUpon>SloziRacunaloForm.cs</DependentUpon>
     </EmbeddedResource>

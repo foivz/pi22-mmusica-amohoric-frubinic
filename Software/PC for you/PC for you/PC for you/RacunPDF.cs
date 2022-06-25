@@ -38,13 +38,29 @@ namespace PC_for_you
             viewer.LocalReport.DataSources.Add(new ReportDataSource("DsKorisnik",VratiKorisnika()));
             viewer.LocalReport.DataSources.Add(new ReportDataSource("DsNarudzba",VratiNarudzbu()));
             viewer.LocalReport.DataSources.Add(new ReportDataSource("DsKomponenta", VratiListuKomponenta()));
-            viewer.LocalReport.DataSources.Add(new ReportDataSource("DsMaticna",VratiListuMaticna()));
             viewer.RefreshReport();
+
             try
             {
                 var bytes = viewer.LocalReport.Render("PDF", deviceInfo, out mimeType, out encoding, out extension, out streamIds, out warnings);
                 string path = Directory.GetParent(System.Reflection.Assembly.GetExecutingAssembly().Location).FullName; 
-                string fileName = Path.Combine(path, "Racun.pdf");
+                string fileName = Path.Combine(path, "RacunKomponenta.pdf");
+                File.WriteAllBytes(fileName, bytes);
+            }
+            catch { }
+
+            viewer.LocalReport.ReportPath = "../../Reports/RacunMaticna.rdlc";
+            viewer.LocalReport.DataSources.Add(new ReportDataSource("DsNarucujeKorisnika", NarucujeKorisnik()));
+            viewer.LocalReport.DataSources.Add(new ReportDataSource("DsKorisnik", VratiKorisnika()));
+            viewer.LocalReport.DataSources.Add(new ReportDataSource("DsNarudzba", VratiNarudzbu()));
+            //viewer.LocalReport.DataSources.Add(new ReportDataSource("DsMaticna", VratiListuMaticna()));
+            viewer.RefreshReport();
+
+            try
+            {
+                var bytes = viewer.LocalReport.Render("PDF", deviceInfo, out mimeType, out encoding, out extension, out streamIds, out warnings);
+                string path = Directory.GetParent(System.Reflection.Assembly.GetExecutingAssembly().Location).FullName;
+                string fileName = Path.Combine(path, "RacunMaticna.pdf");
                 File.WriteAllBytes(fileName, bytes);
             }
             catch { }
@@ -82,9 +98,9 @@ namespace PC_for_you
         }
         private List<maticna> VratiListuMaticna()
         {
-            var query = from n in context.narucuje
-                        where n.IdNarudzbe == IdNarudzba
-                        select n.maticna;
+            var query = from sven in context.narucuje
+                        where sven.IdNarudzbe == IdNarudzba
+                        select sven.maticna;
 
             return query.ToList();
         }
