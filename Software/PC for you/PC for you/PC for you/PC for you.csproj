@@ -139,6 +139,12 @@
     <Compile Include="UserControls\UCKosarica.Designer.cs">
       <DependentUpon>UCKosarica.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCMojeNarudzbe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCMojeNarudzbe.Designer.cs">
+      <DependentUpon>UCMojeNarudzbe.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCUredivanjeKomponenata.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCKosarica.resx">
       <DependentUpon>UCKosarica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCMojeNarudzbe.resx">
+      <DependentUpon>UCMojeNarudzbe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCUredivanjeKomponenata.resx">
       <DependentUpon>UCUredivanjeKomponenata.cs</DependentUpon>

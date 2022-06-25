@@ -74,7 +74,9 @@ namespace PC_for_you
             if(UlogaPrijavljenog != 0)
             {
                 PocetnaStranicaForm form = new PocetnaStranicaForm(UlogaPrijavljenog, KorimePrijavljenog);
+                this.Hide();
                 form.ShowDialog();
+                this.Show();
                 UlogaPrijavljenog = 0;
                 KorimePrijavljenog = "";
             }

@@ -170,6 +170,7 @@
             this.btnMojeNarudzbe.Size = new System.Drawing.Size(108, 42);
             this.btnMojeNarudzbe.TabIndex = 4;
             this.btnMojeNarudzbe.Text = "Moje nardužbe";
+            this.btnMojeNarudzbe.Click += new System.EventHandler(this.btnMojeNarudzbe_Click);
             // 
             // bntKosarica
             // 

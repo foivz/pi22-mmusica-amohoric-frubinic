@@ -79,5 +79,11 @@ namespace PC_for_you
             UCUredivanjeKomponenata uCUredivanjeKomponenata = new UCUredivanjeKomponenata();
             AddUserControl(uCUredivanjeKomponenata);
         }
+
+        private void btnMojeNarudzbe_Click(object sender, EventArgs e)
+        {
+            UCMojeNarudzbe uCMojeNarudzbe = new UCMojeNarudzbe();
+            AddUserControl(uCMojeNarudzbe);
+        }
     }
 }
