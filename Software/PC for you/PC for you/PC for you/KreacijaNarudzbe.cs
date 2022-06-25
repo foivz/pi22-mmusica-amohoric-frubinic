@@ -12,34 +12,34 @@ namespace PC_for_you
         public static List<KreacijaNarudzbe> ListaKomponenataZaNarudzbu = new List<KreacijaNarudzbe>();
         public int ID { get; set; }
         public string Tip { get; set; }
-        
-       
+
+
         public KreacijaNarudzbe()
         {
             ListaKomponenataZaNarudzbu.Clear();
         }
-        public KreacijaNarudzbe( int id, string tip)
+        public KreacijaNarudzbe(int id, string tip)
         {
             ID = id;
             Tip = tip;
         }
         public void DodajKomponentuZaNarudzbu(KreacijaNarudzbe kreacijaNarudzbe)
         {
-           
+
             ListaKomponenataZaNarudzbu.Add(kreacijaNarudzbe);
         }
-        public bool NaruciKomponente()
+        public bool NaruciKomponente(bool provjeri = false)
         {
             narudzba novaNarudzba;
             List<komponenta> listaNarucenaKomponenta = new List<komponenta>();
             List<maticna> ListaNarucenaMaticna = new List<maticna>();
             korisnik korisnikNarucitelj = new korisnik();
-            
+
             using (var context = new PI2233_DBEntities())
             {
                 foreach (korisnik korisnik in context.korisnik)
                 {
-                    if (korisnik.UserName == Sesija.Korime) 
+                    if (korisnik.UserName == Sesija.Korime)
                     {
                         korisnikNarucitelj = korisnik;
                         break;
@@ -72,10 +72,9 @@ namespace PC_for_you
                 }
 
             }
-            
-            Kompatibilnost kompatibilnost = new Kompatibilnost(ListaNarucenaMaticna, listaNarucenaKomponenta);
 
-            if (kompatibilnost.ProvjeriKompatibilnost())
+            Kompatibilnost kompatibilnost = new Kompatibilnost(ListaNarucenaMaticna, listaNarucenaKomponenta);
+            if (kompatibilnost.ProvjeriKompatibilnost(provjeri))
             {
                 double ukupnaCijena = 0;
                 if (listaNarucenaKomponenta.Any()) ukupnaCijena += listaNarucenaKomponenta.Sum(x => x.Cijena);
@@ -141,19 +140,21 @@ namespace PC_for_you
                     }
                 }
                 ListaKomponenataZaNarudzbu.Clear();
-                MessageBox.Show("Uspješno ste naručili računalo!");
+                if(provjeri) MessageBox.Show("Uspješno ste naručili računalo!");
+                RacunPDF racunPDF = new RacunPDF(novaNarudzba.IdNarudzba, Sesija.Korime);
                 return true;
+
             }
             else
             {
                 return false;
             }
-               
-            }
-            ListaKomponenataZaNarudzbu.Clear();
-            RacunPDF racunPDF = new RacunPDF(novaNarudzba.IdNarudzba, Sesija.Korime);
 
         }
-
     }
+
+
 }
+
+    
+

@@ -195,7 +195,6 @@
     <EmbeddedResource Include="RegistracijaForm.resx">
       <DependentUpon>RegistracijaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\RacunMaticna.rdlc" />
     <EmbeddedResource Include="SloziRacunaloForm.resx">
       <DependentUpon>SloziRacunaloForm.cs</DependentUpon>
     </EmbeddedResource>

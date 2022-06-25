@@ -14,11 +14,79 @@
         </Style>
       </Rectangle>
       <Rectangle Name="Rectangle1">
+        <ReportItems>
+          <Textbox Name="Textbox10">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Ukupna cijena:</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox9</rd:DefaultName>
+            <Top>0.26458cm</Top>
+            <Left>0.3175cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.79104cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Ukupna_cijena">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!Ukupna_cijena.Value, "DsNarudzba")</Value>
+                    <Style>
+                      <Format>0.00'kn';(0.00'kn')</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Ukupna_cijena</rd:DefaultName>
+            <Top>0.26458cm</Top>
+            <Left>3.28493cm</Left>
+            <Height>0.6cm</Height>
+            <Width>3.7222cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+              <rd:FormatSymbolCulture>hr-HR</rd:FormatSymbolCulture>
+            </Style>
+          </Textbox>
+        </ReportItems>
         <KeepTogether>true</KeepTogether>
         <Top>6.7907cm</Top>
-        <Left>10.22804cm</Left>
-        <Height>1.15062cm</Height>
-        <Width>6.12889cm</Width>
+        <Left>9.3498cm</Left>
+        <Height>1.18208cm</Height>
+        <Width>7.16076cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -156,8 +224,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Adresa</rd:DefaultName>
-        <Top>2.55391cm</Top>
-        <Left>1.59863cm</Left>
+        <Top>2.58919cm</Top>
+        <Left>1.91613cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>5</ZIndex>
@@ -190,7 +258,7 @@
         <rd:DefaultName>Textbox8</rd:DefaultName>
         <Top>2.58919cm</Top>
         <Height>0.6cm</Height>
-        <Width>1.38875cm</Width>
+        <Width>1.73974cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -253,68 +321,6 @@
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>8</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox10">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Ukupna cijena:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>7.05528cm</Top>
-        <Left>10.53672cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.79104cm</Width>
-        <ZIndex>9</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Ukupna_cijena">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Sum(Fields!Ukupna_cijena.Value, "DsNarudzba")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Ukupna_cijena</rd:DefaultName>
-        <Top>7.05528cm</Top>
-        <Left>13.50415cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
-        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -654,7 +660,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Cijena.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>0.00'kn';(0.00'kn')</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -670,6 +678,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>hr-HR</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -714,7 +723,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=(Lookup(Fields!ID.Value, Fields!IdKomponente.Value,Fields!Kolicina.Value, "DsNarucujeKorisnika") + Lookup(Fields!ID.Value, Fields!IdMaticne.Value,Fields!Kolicina.Value, "DsNarucujeKorisnika"))*Fields!Cijena.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>0.00'kn';(0.00'kn')</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -730,6 +741,7 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
+                        <rd:FormatSymbolCulture>hr-HR</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -762,8 +774,8 @@
         <Top>5.18266cm</Top>
         <Left>0.06048cm</Left>
         <Height>1.2cm</Height>
-        <Width>16.70402cm</Width>
-        <ZIndex>11</ZIndex>
+        <Width>16.704cm</Width>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -792,7 +804,7 @@
         <Left>8.96403cm</Left>
         <Height>0.83812cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>12</ZIndex>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -807,7 +819,7 @@
         <Top>1.9462cm</Top>
         <Height>0cm</Height>
         <Width>16.7645cm</Width>
-        <ZIndex>13</ZIndex>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>

@@ -26,23 +26,32 @@ namespace PC_for_you
             ListaKomponenta = listaKomponenta;
             Kompatibilni = true;
             Poruka = "";
-            PostaviKomponente();
+            
         }
-        public bool ProvjeriKompatibilnost()
+        public bool ProvjeriKompatibilnost(bool provjeri)
         {
+            if (provjeri)
+            {
+                PostaviKomponente();
+                Poruka = "";
+                ProvjeriPotrosnju();
+                ProvjeriVelicinuGraficke();
+                ProvjeriIntefaceMaticneIGraficke();
+                ProvjeriPodrzavanuMaticnu();
+                ProvjeriTipMemorije();
+                ProvjeriSocket();
+                if (Kompatibilni) Poruka = "Vaše komponente su kompatibilne!";
+                System.Windows.Forms.MessageBox.Show(Poruka);
 
-            Poruka = "";
-            ProvjeriPotrosnju();
-            ProvjeriVelicinuGraficke();
-            ProvjeriIntefaceMaticneIGraficke();
-            ProvjeriPodrzavanuMaticnu();
-            ProvjeriTipMemorije();
-            ProvjeriSocket();
-            if (Kompatibilni) Poruka = "Vaše komponente su kompatibilne!";
-            System.Windows.Forms.MessageBox.Show(Poruka);
 
+                return Kompatibilni;
+            }
+            else
+            {
+                return true;
+            }
 
-            return Kompatibilni;
+            
         }
 
         private void ProvjeriSocket()
