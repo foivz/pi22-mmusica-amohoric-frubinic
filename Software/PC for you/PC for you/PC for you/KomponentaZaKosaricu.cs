@@ -19,5 +19,46 @@ namespace PC_for_you
         {
 
         }
+        public static void NapuniListuKomponenataKosarice(List<komponenta> listaKomponenata,
+            List<maticna> listaMaticna, List<KomponentaZaKosaricu> listaKomponenataZaKosaricu)
+        {
+            listaKomponenataZaKosaricu.Clear();
+            if (listaKomponenata.Any())
+            {
+                foreach (komponenta item in listaKomponenata)
+                {
+                    KomponentaZaKosaricu novaKomponenta = new KomponentaZaKosaricu
+                    {
+                        ID = item.IdKomponenta,
+                        Naziv = item.Naziv,
+                        Proizvodac = item.Proizvodac,
+                        Tip = item.Tip,
+                        Potrosnja = item.Potrosnja,
+                        Cijena = item.Cijena
+
+                    };
+                    listaKomponenataZaKosaricu.Add(novaKomponenta);
+                }
+            }
+            
+            if(listaMaticna.Any())
+            {
+                foreach (maticna item in listaMaticna)
+                {
+                    KomponentaZaKosaricu novaKomponenta = new KomponentaZaKosaricu
+                    {
+                        ID = item.IdMaticne,
+                        Naziv = item.Naziv,
+                        Proizvodac = item.Proizvodac,
+                        Tip = "Maticna",
+                        Potrosnja = item.Potrosnja,
+                        Cijena = item.Cijena
+
+                    };
+                    listaKomponenataZaKosaricu.Add(novaKomponenta);
+                }
+            }
+            
+        }
     }
 }

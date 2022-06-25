@@ -148,6 +148,10 @@ namespace PC_for_you
             {
                 return false;
             }
+               
+            }
+            ListaKomponenataZaNarudzbu.Clear();
+            RacunPDF racunPDF = new RacunPDF(novaNarudzba.IdNarudzba, Sesija.Korime);
 
         }
 
