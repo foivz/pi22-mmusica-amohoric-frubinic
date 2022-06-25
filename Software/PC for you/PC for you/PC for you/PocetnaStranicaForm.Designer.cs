@@ -129,6 +129,7 @@
             this.btnSveNarudzbe.Size = new System.Drawing.Size(108, 42);
             this.btnSveNarudzbe.TabIndex = 5;
             this.btnSveNarudzbe.Text = "Sve narudžbe";
+            this.btnSveNarudzbe.Click += new System.EventHandler(this.btnSveNarudzbe_Click);
             // 
             // btnOdjava
             // 

@@ -30,13 +30,13 @@
         {
             this.dgvNarudzbe = new System.Windows.Forms.DataGridView();
             this.dgvDetaljiNarudzbe = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tip = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Proizvodac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cijena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNarudzbe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetaljiNarudzbe)).BeginInit();
             this.SuspendLayout();
@@ -44,9 +44,11 @@
             // dgvNarudzbe
             // 
             this.dgvNarudzbe.AllowUserToAddRows = false;
+            this.dgvNarudzbe.AllowUserToDeleteRows = false;
             this.dgvNarudzbe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNarudzbe.Location = new System.Drawing.Point(3, 34);
             this.dgvNarudzbe.Name = "dgvNarudzbe";
+            this.dgvNarudzbe.ReadOnly = true;
             this.dgvNarudzbe.Size = new System.Drawing.Size(794, 204);
             this.dgvNarudzbe.TabIndex = 2;
             this.dgvNarudzbe.SelectionChanged += new System.EventHandler(this.dgvNarudzbe_SelectionChanged);
@@ -54,6 +56,7 @@
             // dgvDetaljiNarudzbe
             // 
             this.dgvDetaljiNarudzbe.AllowUserToAddRows = false;
+            this.dgvDetaljiNarudzbe.AllowUserToDeleteRows = false;
             this.dgvDetaljiNarudzbe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetaljiNarudzbe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Naziv,
@@ -63,8 +66,44 @@
             this.Cijena});
             this.dgvDetaljiNarudzbe.Location = new System.Drawing.Point(3, 295);
             this.dgvDetaljiNarudzbe.Name = "dgvDetaljiNarudzbe";
+            this.dgvDetaljiNarudzbe.ReadOnly = true;
             this.dgvDetaljiNarudzbe.Size = new System.Drawing.Size(794, 204);
             this.dgvDetaljiNarudzbe.TabIndex = 3;
+            // 
+            // Naziv
+            // 
+            this.Naziv.HeaderText = "Naziv";
+            this.Naziv.Name = "Naziv";
+            this.Naziv.ReadOnly = true;
+            this.Naziv.Width = 150;
+            // 
+            // Kolicina
+            // 
+            this.Kolicina.HeaderText = "Količina";
+            this.Kolicina.Name = "Kolicina";
+            this.Kolicina.ReadOnly = true;
+            this.Kolicina.Width = 150;
+            // 
+            // Tip
+            // 
+            this.Tip.HeaderText = "Tip";
+            this.Tip.Name = "Tip";
+            this.Tip.ReadOnly = true;
+            this.Tip.Width = 150;
+            // 
+            // Proizvodac
+            // 
+            this.Proizvodac.HeaderText = "Proizvođač";
+            this.Proizvodac.Name = "Proizvodac";
+            this.Proizvodac.ReadOnly = true;
+            this.Proizvodac.Width = 150;
+            // 
+            // Cijena
+            // 
+            this.Cijena.HeaderText = "Jedinična cijena";
+            this.Cijena.Name = "Cijena";
+            this.Cijena.ReadOnly = true;
+            this.Cijena.Width = 150;
             // 
             // label1
             // 
@@ -85,36 +124,6 @@
             this.label2.Size = new System.Drawing.Size(140, 19);
             this.label2.TabIndex = 5;
             this.label2.Text = "Detalji narudžbe:";
-            // 
-            // Naziv
-            // 
-            this.Naziv.HeaderText = "Naziv";
-            this.Naziv.Name = "Naziv";
-            this.Naziv.Width = 150;
-            // 
-            // Kolicina
-            // 
-            this.Kolicina.HeaderText = "Količina";
-            this.Kolicina.Name = "Kolicina";
-            this.Kolicina.Width = 150;
-            // 
-            // Tip
-            // 
-            this.Tip.HeaderText = "Tip";
-            this.Tip.Name = "Tip";
-            this.Tip.Width = 150;
-            // 
-            // Proizvodac
-            // 
-            this.Proizvodac.HeaderText = "Proizvođač";
-            this.Proizvodac.Name = "Proizvodac";
-            this.Proizvodac.Width = 150;
-            // 
-            // Cijena
-            // 
-            this.Cijena.HeaderText = "Jedinična cijena";
-            this.Cijena.Name = "Cijena";
-            this.Cijena.Width = 150;
             // 
             // UCMojeNarudzbe
             // 

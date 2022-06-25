@@ -85,5 +85,11 @@ namespace PC_for_you
             UCMojeNarudzbe uCMojeNarudzbe = new UCMojeNarudzbe();
             AddUserControl(uCMojeNarudzbe);
         }
+
+        private void btnSveNarudzbe_Click(object sender, EventArgs e)
+        {
+            UCSveNarudzbe uCSveNarudzbe = new UCSveNarudzbe();
+            AddUserControl(uCSveNarudzbe);
+        }
     }
 }

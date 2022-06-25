@@ -56,7 +56,7 @@ namespace PC_for_you.UserControls
                                  Jedinična_cijena = n.komponenta.Cijena
                              }).ToList();
                 var query2 = (from n in context.narucuje
-                             where n.IdNarucuje == id && n.maticna != null
+                             where n.IdNarudzbe == id && n.maticna != null
                              select new
                              {
                                  Naziv = n.maticna.Naziv,
