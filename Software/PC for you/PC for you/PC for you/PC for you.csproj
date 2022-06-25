@@ -91,7 +91,6 @@
     <Compile Include="narucuje.cs">
       <DependentUpon>PI2233_DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="KomponentaClass.cs" />
     <Compile Include="narudzba.cs">
       <DependentUpon>PI2233_DB.tt</DependentUpon>
     </Compile>
@@ -223,6 +222,7 @@
       <DependentUpon>PI2233_DB.edmx</DependentUpon>
     </None>
     <None Include="Properties\DataSources\komponenta.datasource" />
+    <None Include="Properties\DataSources\KomponentaZaKosaricu.datasource" />
     <None Include="Properties\DataSources\korisnik.datasource" />
     <None Include="Properties\DataSources\maticna.datasource" />
     <None Include="Properties\DataSources\narucuje.datasource" />

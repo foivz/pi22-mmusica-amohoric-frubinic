@@ -10,6 +10,9 @@ namespace PC_for_you
 {
     public class RacunPDF
     {
+        private List<komponenta> listaKomponenata;
+        private List<maticna> listaMaticna;
+        private static List<KomponentaZaKosaricu> listaKomponenataZaKosaricu = new List<KomponentaZaKosaricu>();
         PI2233_DBEntities context = new PI2233_DBEntities();
         public int IdNarudzba { get; set; }
         public string Korime { get; set; }
@@ -22,6 +25,9 @@ namespace PC_for_you
 
         private void GenerirajRacunPDF()
         {
+            listaKomponenata = VratiListuKomponenta();
+            listaMaticna = VratiListuMaticna();
+            KomponentaZaKosaricu.NapuniListuKomponenataKosarice(listaKomponenata, listaMaticna, listaKomponenataZaKosaricu);
 
             string deviceInfo = "";
             string[] streamIds;
@@ -37,33 +43,17 @@ namespace PC_for_you
             viewer.LocalReport.DataSources.Add(new ReportDataSource("DsNarucujeKorisnika", NarucujeKorisnik()));
             viewer.LocalReport.DataSources.Add(new ReportDataSource("DsKorisnik",VratiKorisnika()));
             viewer.LocalReport.DataSources.Add(new ReportDataSource("DsNarudzba",VratiNarudzbu()));
-            viewer.LocalReport.DataSources.Add(new ReportDataSource("DsKomponenta", VratiListuKomponenta()));
+            viewer.LocalReport.DataSources.Add(new ReportDataSource("DsNaruceneKomponente", listaKomponenataZaKosaricu));
             viewer.RefreshReport();
 
             try
             {
                 var bytes = viewer.LocalReport.Render("PDF", deviceInfo, out mimeType, out encoding, out extension, out streamIds, out warnings);
                 string path = Directory.GetParent(System.Reflection.Assembly.GetExecutingAssembly().Location).FullName; 
-                string fileName = Path.Combine(path, "RacunKomponenta.pdf");
+                string fileName = Path.Combine(path, "PCforYouRacun.pdf");
                 File.WriteAllBytes(fileName, bytes);
             }
-            catch { }
-
-            viewer.LocalReport.ReportPath = "../../Reports/RacunMaticna.rdlc";
-            viewer.LocalReport.DataSources.Add(new ReportDataSource("DsNarucujeKorisnika", NarucujeKorisnik()));
-            viewer.LocalReport.DataSources.Add(new ReportDataSource("DsKorisnik", VratiKorisnika()));
-            viewer.LocalReport.DataSources.Add(new ReportDataSource("DsNarudzba", VratiNarudzbu()));
-            //viewer.LocalReport.DataSources.Add(new ReportDataSource("DsMaticna", VratiListuMaticna()));
-            viewer.RefreshReport();
-
-            try
-            {
-                var bytes = viewer.LocalReport.Render("PDF", deviceInfo, out mimeType, out encoding, out extension, out streamIds, out warnings);
-                string path = Directory.GetParent(System.Reflection.Assembly.GetExecutingAssembly().Location).FullName;
-                string fileName = Path.Combine(path, "RacunMaticna.pdf");
-                File.WriteAllBytes(fileName, bytes);
-            }
-            catch { }
+            catch { }  
         }
 
         private List<narucuje> NarucujeKorisnik() 
@@ -83,7 +73,7 @@ namespace PC_for_you
         private List<komponenta> VratiListuKomponenta()
         {
             var query = from narudzba in context.narucuje
-                        where narudzba.IdNarudzbe == IdNarudzba
+                        where narudzba.IdNarudzbe == IdNarudzba && narudzba.komponenta!=null
                         select narudzba.komponenta;
 
             return query.ToList();
@@ -99,11 +89,13 @@ namespace PC_for_you
         private List<maticna> VratiListuMaticna()
         {
             var query = from sven in context.narucuje
-                        where sven.IdNarudzbe == IdNarudzba
+                        where sven.IdNarudzbe == IdNarudzba && sven.maticna != null
                         select sven.maticna;
 
             return query.ToList();
         }
+        
 
     }
+
 }
