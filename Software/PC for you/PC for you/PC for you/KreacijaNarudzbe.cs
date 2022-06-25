@@ -132,8 +132,11 @@ namespace PC_for_you
                     komponentaContext.narucuje.Add(noviNarucuje);
                     komponentaContext.SaveChanges();
                 }
+               
             }
-            ListaKomponenataZaNarudzbu.Clear();   
+            ListaKomponenataZaNarudzbu.Clear();
+            RacunPDF racunPDF = new RacunPDF(novaNarudzba.IdNarudzba, Sesija.Korime);
+
         }
 
     }
