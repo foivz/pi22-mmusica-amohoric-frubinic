@@ -43,7 +43,8 @@ namespace PC_for_you
             try
             {
                 var bytes = viewer.LocalReport.Render("PDF", deviceInfo, out mimeType, out encoding, out extension, out streamIds, out warnings);
-                string fileName = @"\Racun.pdf";
+                string path = Directory.GetParent(System.Reflection.Assembly.GetExecutingAssembly().Location).FullName; 
+                string fileName = Path.Combine(path, "Racun.pdf");
                 File.WriteAllBytes(fileName, bytes);
             }
             catch { }
