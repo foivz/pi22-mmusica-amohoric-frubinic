@@ -81,7 +81,18 @@ namespace PC_for_you.UserControls
                    var query = (from k in context.komponenta
                              where k.IdKomponenta == id
                              select k).ToList().First();
+
                     context.komponenta.Attach(query);
+
+                    var query1 = (from n in context.narucuje
+                                  where n.komponenta.IdKomponenta == id
+                                  select n).ToList();
+                    foreach(narucuje n in query1)
+                    {
+                        context.narucuje.Attach(n);
+                        context.narucuje.Remove(n);
+                    }
+
                     context.komponenta.Remove(query);
                     context.SaveChanges();
                 }
@@ -90,7 +101,19 @@ namespace PC_for_you.UserControls
                    var query = (from m in context.maticna
                              where m.IdMaticne == id
                              select m).ToList().First();
+
                     context.maticna.Attach(query);
+
+                    var query1 = (from n in context.narucuje
+                                  where n.maticna.IdMaticne == id
+                                  select n).ToList();
+
+                    foreach (narucuje n in query1)
+                    {
+                        context.narucuje.Attach(n);
+                        context.narucuje.Remove(n);
+                    }
+
                     context.maticna.Remove(query);
                     context.SaveChanges();
                 }

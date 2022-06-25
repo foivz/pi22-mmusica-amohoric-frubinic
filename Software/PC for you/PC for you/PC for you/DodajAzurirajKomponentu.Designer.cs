@@ -113,7 +113,7 @@
             this.txtSocekt.Location = new System.Drawing.Point(178, 142);
             this.txtSocekt.Name = "txtSocekt";
             this.txtSocekt.Size = new System.Drawing.Size(171, 20);
-            this.txtSocekt.TabIndex = 6;
+            this.txtSocekt.TabIndex = 3;
             // 
             // label4
             // 
@@ -129,7 +129,7 @@
             this.txtPotrosnja.Location = new System.Drawing.Point(178, 116);
             this.txtPotrosnja.Name = "txtPotrosnja";
             this.txtPotrosnja.Size = new System.Drawing.Size(171, 20);
-            this.txtPotrosnja.TabIndex = 8;
+            this.txtPotrosnja.TabIndex = 2;
             // 
             // label5
             // 
@@ -145,7 +145,7 @@
             this.txtProizvodac.Location = new System.Drawing.Point(178, 90);
             this.txtProizvodac.Name = "txtProizvodac";
             this.txtProizvodac.Size = new System.Drawing.Size(171, 20);
-            this.txtProizvodac.TabIndex = 10;
+            this.txtProizvodac.TabIndex = 1;
             // 
             // label6
             // 
@@ -161,7 +161,7 @@
             this.txtNazivKomponente.Location = new System.Drawing.Point(178, 64);
             this.txtNazivKomponente.Name = "txtNazivKomponente";
             this.txtNazivKomponente.Size = new System.Drawing.Size(171, 20);
-            this.txtNazivKomponente.TabIndex = 12;
+            this.txtNazivKomponente.TabIndex = 0;
             // 
             // label7
             // 
@@ -178,7 +178,7 @@
             this.txtBrzina.Location = new System.Drawing.Point(178, 194);
             this.txtBrzina.Name = "txtBrzina";
             this.txtBrzina.Size = new System.Drawing.Size(171, 20);
-            this.txtBrzina.TabIndex = 14;
+            this.txtBrzina.TabIndex = 5;
             // 
             // label8
             // 
@@ -195,7 +195,7 @@
             this.txtTipMemorije.Location = new System.Drawing.Point(178, 168);
             this.txtTipMemorije.Name = "txtTipMemorije";
             this.txtTipMemorije.Size = new System.Drawing.Size(171, 20);
-            this.txtTipMemorije.TabIndex = 16;
+            this.txtTipMemorije.TabIndex = 4;
             // 
             // label9
             // 
@@ -212,7 +212,7 @@
             this.txtVelicinaMemorije.Location = new System.Drawing.Point(178, 220);
             this.txtVelicinaMemorije.Name = "txtVelicinaMemorije";
             this.txtVelicinaMemorije.Size = new System.Drawing.Size(171, 20);
-            this.txtVelicinaMemorije.TabIndex = 18;
+            this.txtVelicinaMemorije.TabIndex = 6;
             // 
             // label10
             // 
@@ -229,7 +229,7 @@
             this.txtInterface.Location = new System.Drawing.Point(178, 246);
             this.txtInterface.Name = "txtInterface";
             this.txtInterface.Size = new System.Drawing.Size(171, 20);
-            this.txtInterface.TabIndex = 20;
+            this.txtInterface.TabIndex = 7;
             // 
             // label11
             // 
@@ -246,7 +246,7 @@
             this.txtDuzinaGraficke.Location = new System.Drawing.Point(178, 272);
             this.txtDuzinaGraficke.Name = "txtDuzinaGraficke";
             this.txtDuzinaGraficke.Size = new System.Drawing.Size(171, 20);
-            this.txtDuzinaGraficke.TabIndex = 22;
+            this.txtDuzinaGraficke.TabIndex = 8;
             // 
             // label12
             // 
@@ -263,7 +263,7 @@
             this.txtVRAM.Location = new System.Drawing.Point(178, 298);
             this.txtVRAM.Name = "txtVRAM";
             this.txtVRAM.Size = new System.Drawing.Size(171, 20);
-            this.txtVRAM.TabIndex = 24;
+            this.txtVRAM.TabIndex = 9;
             // 
             // label13
             // 
@@ -280,7 +280,7 @@
             this.txtKapacitetNapajanja.Location = new System.Drawing.Point(178, 324);
             this.txtKapacitetNapajanja.Name = "txtKapacitetNapajanja";
             this.txtKapacitetNapajanja.Size = new System.Drawing.Size(171, 20);
-            this.txtKapacitetNapajanja.TabIndex = 26;
+            this.txtKapacitetNapajanja.TabIndex = 10;
             // 
             // label14
             // 
@@ -297,7 +297,7 @@
             this.txtMaxGraficka.Location = new System.Drawing.Point(178, 350);
             this.txtMaxGraficka.Name = "txtMaxGraficka";
             this.txtMaxGraficka.Size = new System.Drawing.Size(171, 20);
-            this.txtMaxGraficka.TabIndex = 28;
+            this.txtMaxGraficka.TabIndex = 11;
             // 
             // label15
             // 
@@ -314,7 +314,7 @@
             this.txtPodrzavanaMaticna.Location = new System.Drawing.Point(178, 376);
             this.txtPodrzavanaMaticna.Name = "txtPodrzavanaMaticna";
             this.txtPodrzavanaMaticna.Size = new System.Drawing.Size(171, 20);
-            this.txtPodrzavanaMaticna.TabIndex = 30;
+            this.txtPodrzavanaMaticna.TabIndex = 12;
             // 
             // label16
             // 
@@ -331,7 +331,7 @@
             this.txtKapacitetPohrane.Location = new System.Drawing.Point(178, 402);
             this.txtKapacitetPohrane.Name = "txtKapacitetPohrane";
             this.txtKapacitetPohrane.Size = new System.Drawing.Size(171, 20);
-            this.txtKapacitetPohrane.TabIndex = 32;
+            this.txtKapacitetPohrane.TabIndex = 13;
             // 
             // label17
             // 
@@ -347,7 +347,7 @@
             this.btnPotvrdi.Location = new System.Drawing.Point(193, 560);
             this.btnPotvrdi.Name = "btnPotvrdi";
             this.btnPotvrdi.Size = new System.Drawing.Size(75, 23);
-            this.btnPotvrdi.TabIndex = 35;
+            this.btnPotvrdi.TabIndex = 19;
             this.btnPotvrdi.Text = "Potvrdi";
             this.btnPotvrdi.UseVisualStyleBackColor = true;
             this.btnPotvrdi.Click += new System.EventHandler(this.btnPotvrdi_Click);
@@ -357,7 +357,7 @@
             this.btnOdustani.Location = new System.Drawing.Point(274, 560);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(75, 23);
-            this.btnOdustani.TabIndex = 36;
+            this.btnOdustani.TabIndex = 20;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
             this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
@@ -368,7 +368,7 @@
             this.txtVelicinaMaticne.Location = new System.Drawing.Point(178, 428);
             this.txtVelicinaMaticne.Name = "txtVelicinaMaticne";
             this.txtVelicinaMaticne.Size = new System.Drawing.Size(171, 20);
-            this.txtVelicinaMaticne.TabIndex = 38;
+            this.txtVelicinaMaticne.TabIndex = 14;
             // 
             // label2
             // 
@@ -393,7 +393,7 @@
             this.txtCijena.Location = new System.Drawing.Point(178, 534);
             this.txtCijena.Name = "txtCijena";
             this.txtCijena.Size = new System.Drawing.Size(171, 20);
-            this.txtCijena.TabIndex = 42;
+            this.txtCijena.TabIndex = 18;
             // 
             // label20
             // 
@@ -410,7 +410,7 @@
             this.numBrojModula.Location = new System.Drawing.Point(178, 454);
             this.numBrojModula.Name = "numBrojModula";
             this.numBrojModula.Size = new System.Drawing.Size(30, 20);
-            this.numBrojModula.TabIndex = 43;
+            this.numBrojModula.TabIndex = 15;
             // 
             // chkPCIe8
             // 
@@ -419,7 +419,7 @@
             this.chkPCIe8.Location = new System.Drawing.Point(41, 482);
             this.chkPCIe8.Name = "chkPCIe8";
             this.chkPCIe8.Size = new System.Drawing.Size(97, 17);
-            this.chkPCIe8.TabIndex = 44;
+            this.chkPCIe8.TabIndex = 16;
             this.chkPCIe8.Text = "InterfacePCIe8";
             this.chkPCIe8.UseVisualStyleBackColor = true;
             // 
@@ -430,12 +430,13 @@
             this.chkPCIe16.Location = new System.Drawing.Point(41, 505);
             this.chkPCIe16.Name = "chkPCIe16";
             this.chkPCIe16.Size = new System.Drawing.Size(103, 17);
-            this.chkPCIe16.TabIndex = 45;
+            this.chkPCIe16.TabIndex = 17;
             this.chkPCIe16.Text = "InterfacePCIe16";
             this.chkPCIe16.UseVisualStyleBackColor = true;
             // 
             // DodajAzurirajKomponentu
             // 
+            this.AcceptButton = this.btnPotvrdi;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(366, 595);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PC_for_you
 {
@@ -15,7 +16,7 @@ namespace PC_for_you
        
         public KreacijaNarudzbe()
         {
-
+            ListaKomponenataZaNarudzbu.Clear();
         }
         public KreacijaNarudzbe( int id, string tip)
         {
@@ -24,9 +25,10 @@ namespace PC_for_you
         }
         public void DodajKomponentuZaNarudzbu(KreacijaNarudzbe kreacijaNarudzbe)
         {
+           
             ListaKomponenataZaNarudzbu.Add(kreacijaNarudzbe);
         }
-        public void NaruciKomponente()
+        public bool NaruciKomponente()
         {
             narudzba novaNarudzba;
             List<komponenta> listaNarucenaKomponenta = new List<komponenta>();
@@ -70,70 +72,83 @@ namespace PC_for_you
                 }
 
             }
-            double ukupnaCijena=0;
-            if (listaNarucenaKomponenta.Any()) ukupnaCijena += listaNarucenaKomponenta.Sum(x => x.Cijena);
-            if(ListaNarucenaMaticna.Any()) ukupnaCijena += ListaNarucenaMaticna.Sum(x => x.Cijena);
+            
+            Kompatibilnost kompatibilnost = new Kompatibilnost(ListaNarucenaMaticna, listaNarucenaKomponenta);
 
-            using (var narudzbaContext = new PI2233_DBEntities())
+            if (kompatibilnost.ProvjeriKompatibilnost())
             {
-                narudzbaContext.korisnik.Attach(korisnikNarucitelj);
-                novaNarudzba = new narudzba
-                {
-                    Datum = DateTime.Now,
-                    IdKorisnika = korisnikNarucitelj.IdKorisnik,
-                    korisnik = korisnikNarucitelj,
-                    Ukupna_cijena = ukupnaCijena,
-                    
-                };
-                narudzbaContext.narudzba.Add(novaNarudzba);
-                narudzbaContext.SaveChanges();
-            }
-            var listaMaticnaBezDuplikata = ListaNarucenaMaticna.GroupBy(x => x.IdMaticne).Select(x => x.First()).ToList();
-            var listaKomponenataBezDuplikata = listaNarucenaKomponenta.GroupBy(x => x.IdKomponenta).Select(x => x.First()).ToList();
+                double ukupnaCijena = 0;
+                if (listaNarucenaKomponenta.Any()) ukupnaCijena += listaNarucenaKomponenta.Sum(x => x.Cijena);
+                if (ListaNarucenaMaticna.Any()) ukupnaCijena += ListaNarucenaMaticna.Sum(x => x.Cijena);
 
-            foreach (maticna narucenaMaticna in listaMaticnaBezDuplikata)
-            {
-                using (var narucujuContext = new PI2233_DBEntities())
+                using (var narudzbaContext = new PI2233_DBEntities())
                 {
-                    narucujuContext.narudzba.Attach(novaNarudzba);
-                    narucujuContext.maticna.Attach(narucenaMaticna);
-                    int kolicina = ListaNarucenaMaticna.FindAll(x=>x.IdMaticne ==narucenaMaticna.IdMaticne).Count();
-                    
-                    narucuje noviNarucuje = new narucuje
+                    narudzbaContext.korisnik.Attach(korisnikNarucitelj);
+                    novaNarudzba = new narudzba
                     {
-                        IdMaticne=narucenaMaticna.IdMaticne,
-                        IdNarudzbe=novaNarudzba.IdNarudzba,
-                        maticna=narucenaMaticna,
-                        Kolicina = kolicina,
-                        narudzba=novaNarudzba
+                        Datum = DateTime.Now,
+                        IdKorisnika = korisnikNarucitelj.IdKorisnik,
+                        korisnik = korisnikNarucitelj,
+                        Ukupna_cijena = ukupnaCijena,
 
                     };
-                    narucujuContext.narucuje.Add(noviNarucuje);
-                    narucujuContext.SaveChanges();
-                    
+                    narudzbaContext.narudzba.Add(novaNarudzba);
+                    narudzbaContext.SaveChanges();
                 }
-            }
-            foreach (komponenta narucenaKomponenta in listaKomponenataBezDuplikata)
-            {
-                using (var komponentaContext = new PI2233_DBEntities())
+                var listaMaticnaBezDuplikata = ListaNarucenaMaticna.GroupBy(x => x.IdMaticne).Select(x => x.First()).ToList();
+                var listaKomponenataBezDuplikata = listaNarucenaKomponenta.GroupBy(x => x.IdKomponenta).Select(x => x.First()).ToList();
+
+                foreach (maticna narucenaMaticna in listaMaticnaBezDuplikata)
                 {
-                    komponentaContext.narudzba.Attach(novaNarudzba);
-                    komponentaContext.komponenta.Attach(narucenaKomponenta);
-                    int kolicina = listaNarucenaKomponenta.FindAll(x=> x.IdKomponenta == narucenaKomponenta.IdKomponenta).Count();
-                    
-                    narucuje noviNarucuje = new narucuje
+                    using (var narucujuContext = new PI2233_DBEntities())
                     {
-                        IdKomponente = narucenaKomponenta.IdKomponenta,
-                        IdNarudzbe = novaNarudzba.IdNarudzba,
-                        Kolicina = kolicina,
-                        komponenta = narucenaKomponenta,
-                        narudzba = novaNarudzba
-                    };
-                    komponentaContext.narucuje.Add(noviNarucuje);
-                    komponentaContext.SaveChanges();
+                        narucujuContext.narudzba.Attach(novaNarudzba);
+                        narucujuContext.maticna.Attach(narucenaMaticna);
+                        int kolicina = ListaNarucenaMaticna.FindAll(x => x.IdMaticne == narucenaMaticna.IdMaticne).Count();
+
+                        narucuje noviNarucuje = new narucuje
+                        {
+                            IdMaticne = narucenaMaticna.IdMaticne,
+                            IdNarudzbe = novaNarudzba.IdNarudzba,
+                            maticna = narucenaMaticna,
+                            Kolicina = kolicina,
+                            narudzba = novaNarudzba
+
+                        };
+                        narucujuContext.narucuje.Add(noviNarucuje);
+                        narucujuContext.SaveChanges();
+
+                    }
                 }
+                foreach (komponenta narucenaKomponenta in listaKomponenataBezDuplikata)
+                {
+                    using (var komponentaContext = new PI2233_DBEntities())
+                    {
+                        komponentaContext.narudzba.Attach(novaNarudzba);
+                        komponentaContext.komponenta.Attach(narucenaKomponenta);
+                        int kolicina = listaNarucenaKomponenta.FindAll(x => x.IdKomponenta == narucenaKomponenta.IdKomponenta).Count();
+
+                        narucuje noviNarucuje = new narucuje
+                        {
+                            IdKomponente = narucenaKomponenta.IdKomponenta,
+                            IdNarudzbe = novaNarudzba.IdNarudzba,
+                            Kolicina = kolicina,
+                            komponenta = narucenaKomponenta,
+                            narudzba = novaNarudzba
+                        };
+                        komponentaContext.narucuje.Add(noviNarucuje);
+                        komponentaContext.SaveChanges();
+                    }
+                }
+                ListaKomponenataZaNarudzbu.Clear();
+                MessageBox.Show("Uspješno ste naručili računalo!");
+                return true;
             }
-            ListaKomponenataZaNarudzbu.Clear();   
+            else
+            {
+                return false;
+            }
+
         }
 
     }
