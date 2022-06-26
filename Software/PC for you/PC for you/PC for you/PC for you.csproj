@@ -86,7 +86,6 @@
       <DependentUpon>DodajAzurirajKomponentu.cs</DependentUpon>
     </Compile>
     <Compile Include="DohvatiKomponente.cs" />
-    <Compile Include="SlanjeEmaila.cs" />
     <Compile Include="Kompatibilnost.cs" />
     <Compile Include="komponenta.cs">
       <DependentUpon>PI2233_DB.tt</DependentUpon>
