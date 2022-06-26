@@ -29,7 +29,9 @@ namespace PC_for_you
             listaMaticna = VratiListuMaticna();
             KomponentaZaKosaricu.NapuniListuKomponenataKosarice(listaKomponenata, listaMaticna, listaKomponenataZaKosaricu);
 
-            string deviceInfo = "";
+            string deviceInfo = @"<DeviceInfo>
+                    <EmbedFonts>None</EmbedFonts>
+                   </DeviceInfo>";
             string[] streamIds;
             Warning[] warnings;
             string mimeType = string.Empty;
