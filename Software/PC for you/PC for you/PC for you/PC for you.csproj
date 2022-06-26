@@ -131,7 +131,6 @@
     <Compile Include="RegistracijaForm.Designer.cs">
       <DependentUpon>RegistracijaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sesija.cs" />
     <Compile Include="SloziRacunaloForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +267,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DllLibrary\DllLibrary.csproj">
+      <Project>{fa789908-ccec-4da0-be29-b1b23d548c55}</Project>
+      <Name>DllLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
