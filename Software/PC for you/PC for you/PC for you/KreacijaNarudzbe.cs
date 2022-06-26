@@ -1,6 +1,7 @@
 ﻿using DllLibrary;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -141,10 +142,10 @@ namespace PC_for_you
                     }
                 }
                 ListaKomponenataZaNarudzbu.Clear();
-                if(provjeri) MessageBox.Show("Uspješno ste naručili računalo!");
+                if (provjeri) MessageBox.Show("Uspješno ste naručili računalo!");
+
                 RacunPDF racunPDF = new RacunPDF(novaNarudzba.IdNarudzba, Sesija.Korime);
                 return true;
-
             }
             else
             {
