@@ -16,6 +16,7 @@ namespace PC_for_you
         PI2233_DBEntities context = new PI2233_DBEntities();
         public int IdNarudzba { get; set; }
         public string Korime { get; set; }
+        public bool Wait = false;
         public RacunPDF(int idNarudzba, string korime)
         {
             IdNarudzba = idNarudzba;
@@ -48,14 +49,20 @@ namespace PC_for_you
             viewer.LocalReport.DataSources.Add(new ReportDataSource("DsNaruceneKomponente", listaKomponenataZaKosaricu));
             viewer.RefreshReport();
 
-            try
+            
+            var bytes = viewer.LocalReport.Render("PDF", deviceInfo, out mimeType, out encoding, out extension, out streamIds, out warnings);
+            string path = Directory.GetParent(System.Reflection.Assembly.GetExecutingAssembly().Location).FullName; 
+            string fileName = Path.Combine(path, "PCforYouRacun.pdf");
+            if (File.Exists(fileName))
             {
-                var bytes = viewer.LocalReport.Render("PDF", deviceInfo, out mimeType, out encoding, out extension, out streamIds, out warnings);
-                string path = Directory.GetParent(System.Reflection.Assembly.GetExecutingAssembly().Location).FullName; 
-                string fileName = Path.Combine(path, "PCforYouRacun.pdf");
-                File.WriteAllBytes(fileName, bytes);
+                
+                File.Delete(fileName);
             }
-            catch { }  
+            File.WriteAllBytes(fileName, bytes);
+            PosaljiPDF();
+
+
+
         }
 
         private List<narucuje> NarucujeKorisnik() 
@@ -96,7 +103,33 @@ namespace PC_for_you
 
             return query.ToList();
         }
-        
+        private void PosaljiPDF()
+        {
+            using (var context = new PI2233_DBEntities())
+            {
+                korisnik korisnik = null;
+                korisnik admin = null;
+                foreach (korisnik k in context.korisnik)
+                {
+                    if (k.Uloga == 1)
+                    {
+                        admin = k;
+                    }
+                    if (k.UserName == Sesija.Korime)
+                    {
+                        korisnik = k;
+                        break;
+                    }
+                }
+
+                if (admin.UserName != Sesija.Korime)
+                {
+                    SlanjeEmaila.PosaljiEmail(korisnik.E_mail);
+                }
+
+                SlanjeEmaila.PosaljiEmail(admin.E_mail);
+            }
+        }
 
     }
 
