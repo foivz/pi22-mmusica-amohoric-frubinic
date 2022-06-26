@@ -52,19 +52,27 @@ namespace PC_for_you.UserControls
 
         private void btnNaruci_Click(object sender, EventArgs e)
         {
-            KreacijaNarudzbe kreacijaNarudzbe = new KreacijaNarudzbe();
-            int duljinaDgv = dgvKosarica.Rows.Count;
-            
-            for (int i = 0; i < duljinaDgv; i++)
+            if(dgvKosarica.RowCount > 0)
             {
-                int id = int.Parse(dgvKosarica.Rows[i].Cells[0].Value.ToString());
-                string tip = dgvKosarica.Rows[i].Cells[5].Value.ToString();
-            
-                kreacijaNarudzbe.DodajKomponentuZaNarudzbu(new KreacijaNarudzbe(id, tip));
+                KreacijaNarudzbe kreacijaNarudzbe = new KreacijaNarudzbe();
+                int duljinaDgv = dgvKosarica.Rows.Count;
+
+                for (int i = 0; i < duljinaDgv; i++)
+                {
+                    int id = int.Parse(dgvKosarica.Rows[i].Cells[0].Value.ToString());
+                    string tip = dgvKosarica.Rows[i].Cells[5].Value.ToString();
+
+                    kreacijaNarudzbe.DodajKomponentuZaNarudzbu(new KreacijaNarudzbe(id, tip));
+                }
+                kreacijaNarudzbe.NaruciKomponente();
+                OcistiKosaricu();
+                MessageBox.Show("Uspješno ste naručili željene komponente!");
             }
-            kreacijaNarudzbe.NaruciKomponente();
-            OcistiKosaricu();
-            MessageBox.Show("Uspješno ste naručili željene komponente!");
+            else
+            {
+                MessageBox.Show("Košarica je prazna!");
+            }
+            
         }
         private void OcistiKosaricu() 
         {
