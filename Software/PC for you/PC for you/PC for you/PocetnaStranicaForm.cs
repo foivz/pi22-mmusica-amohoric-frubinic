@@ -94,7 +94,7 @@ namespace PC_for_you
 
         private void PocetnaStranicaForm_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            Help.ShowHelp(this, "helpfile.chm", HelpNavigator.TopicId, "1234");
+            Help.ShowHelp(this, "../../Resources/PC4YOU.chm");
         }
     }
 }
