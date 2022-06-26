@@ -130,5 +130,10 @@ namespace PC_for_you.UserControls
             listBoxKomponenta.Items.Add(prenesenaKomponenta);
             
         }
+
+        private void UCKomponente_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "../../Resources/PC4YOU.chm", HelpNavigator.Topic, "11Slaganjeracunala.htm");
+        }
     }
 }

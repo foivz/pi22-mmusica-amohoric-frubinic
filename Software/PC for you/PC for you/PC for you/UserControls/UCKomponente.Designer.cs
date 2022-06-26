@@ -117,6 +117,7 @@
             this.Name = "UCKomponente";
             this.Size = new System.Drawing.Size(800, 502);
             this.Load += new System.EventHandler(this.UCKomponente_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.UCKomponente_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKomponente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -121,7 +121,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>RAČUN br. </Value>
+                <Value>RACUN br. </Value>
                 <Style>
                   <FontSize>18pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -498,7 +498,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Količina</Value>
+                              <Value>Kolicina</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>

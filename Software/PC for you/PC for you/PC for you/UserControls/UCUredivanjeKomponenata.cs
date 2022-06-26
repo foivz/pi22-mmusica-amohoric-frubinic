@@ -119,5 +119,11 @@ namespace PC_for_you.UserControls
                 }
             }
         }
+
+        private void UCUredivanjeKomponenata_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "../../Resources/PC4YOU.chm", HelpNavigator.Topic, "5Uredivanjekomponenata.htm");
+
+        }
     }
 }

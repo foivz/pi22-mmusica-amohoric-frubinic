@@ -82,5 +82,10 @@ namespace PC_for_you.UserControls
         {
             DohvatiDetaljeNarudzbe();
         }
+
+        private void UCMojeNarudzbe_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "../../Resources/PC4YOU.chm", HelpNavigator.Topic, "3Mojenarudzbe.htm");
+        }
     }
 }

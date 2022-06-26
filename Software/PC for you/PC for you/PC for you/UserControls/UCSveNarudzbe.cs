@@ -104,5 +104,10 @@ namespace PC_for_you.UserControls
             }
             DohvatiSveNarudzbe();
         }
+
+        private void UCSveNarudzbe_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "../../Resources/PC4YOU.chm", HelpNavigator.Topic, "4Svenarudzbe.htm");
+        }
     }
 }

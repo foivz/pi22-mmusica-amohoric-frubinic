@@ -149,6 +149,7 @@
             this.Name = "UCSveNarudzbe";
             this.Size = new System.Drawing.Size(800, 502);
             this.Load += new System.EventHandler(this.UCSveNarudzbe_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.UCSveNarudzbe_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetaljiSveNarudzbe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSveNarudzbe)).EndInit();
             this.ResumeLayout(false);

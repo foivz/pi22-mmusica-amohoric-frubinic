@@ -106,6 +106,7 @@
             this.Name = "UCUredivanjeKomponenata";
             this.Size = new System.Drawing.Size(800, 502);
             this.Load += new System.EventHandler(this.UCUredivanjeKomponenata_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.UCUredivanjeKomponenata_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUredivanjeKomponenata)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

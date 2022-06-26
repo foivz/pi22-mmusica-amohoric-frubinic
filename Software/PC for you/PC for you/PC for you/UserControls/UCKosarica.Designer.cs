@@ -93,6 +93,7 @@
             this.Name = "UCKosarica";
             this.Size = new System.Drawing.Size(797, 502);
             this.Load += new System.EventHandler(this.UCKosarica_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.UCKosarica_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKosarica)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
