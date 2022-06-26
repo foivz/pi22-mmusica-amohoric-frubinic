@@ -91,5 +91,10 @@ namespace PC_for_you
             UCSveNarudzbe uCSveNarudzbe = new UCSveNarudzbe();
             AddUserControl(uCSveNarudzbe);
         }
+
+        private void PocetnaStranicaForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            Help.ShowHelp(this, "helpfile.chm", HelpNavigator.TopicId, "1234");
+        }
     }
 }

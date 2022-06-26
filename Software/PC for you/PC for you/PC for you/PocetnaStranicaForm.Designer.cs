@@ -235,6 +235,7 @@
             this.Name = "PocetnaStranicaForm";
             this.Text = "Početna stranica";
             this.Load += new System.EventHandler(this.PocetnaStranicaForm_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.PocetnaStranicaForm_HelpRequested);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
