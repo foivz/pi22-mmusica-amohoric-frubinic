@@ -58,6 +58,10 @@ namespace PC_for_you
                                 KorimePrijavljenog = pronadjenKorisnik.UserName;
                                 UlogaPrijavljenog = pronadjenKorisnik.Uloga;
                             }
+                            else
+                            {
+                                MessageBox.Show("Kriva lozinka!");
+                            }
                             break;
                         }
                     }
